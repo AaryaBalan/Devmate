@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d8ca3bfef7.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="text-[15px] h-full bg-[#f6f6f6] overflow-x-hidden">
+    <!-- navbar -->
+    <!-- z-20 -->
+    <div class="fixed z-20 top-0 flex w-full text-white bg-black">
+        <nav class="flex items-center w-full px-10 py-4 justify-evenly">
+            <div class="flex items-center w-full gap-x-5">
+                <div class="py-1 text-xl font-bold">
+                    DevMate
+                </div>
+                <div class="hidden md:flex">
+                    <input type="text"
+                        class="outline-none border border-black rounded-xl text-[16px] px-2 py-1 text-black"
+                        placeholder="Search..">
+                </div>
+            </div>
+
+            <div class="flex gap-x-10">
+                <div>
+                    <i class="text-xl fa-solid fa-bell"></i>
+                </div>
+                <div class="relative">
+                    <i class="hidden text-xl md:block fa-solid fa-circle-user"></i>
+                    <i class="text-xl md:hidden fa-solid fa-gear" onclick="showPopup()"></i>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- z-20 -->
+    <div class="hidden right-5 top-20 bg-[#00000057] backdrop-blur px-5 py-3 rounded-md z-20" id="popup">
+        <div class="flex flex-col gap-y-2">
+            <div class="px-2 py-1 text-white rounded-md cursor-pointer hover:bg-[#ffffff60]">Edit Profile</div>
+            <div class="px-2 py-1 text-white rounded-md cursor-pointer hover:bg-[#ffffff60]">Saved</div>
+            <div class="px-2 py-1 text-white rounded-md cursor-pointer hover:bg-[#ffffff60]">Dark Theme</div>
+        </div>
+    </div>
+
+
+    <!-- phone navbar -->
+    <div class="fixed bottom-0 w-full py-2 bg-[#00000057] backdrop-blur lg:hidden z-10">
+        <div class="flex justify-around">
+            <div><i class="text-xl fa-solid fa-house"></i></div>
+            <div><i class="text-xl fa-regular fa-compass"></i></div>
+            <div><i class="text-xl fa-solid fa-house"></i></div>
+            <div><i class="text-xl fa-regular fa-circle-user"></i></div>
+        </div>
+    </div>
+
+    <!-- main section -->
+
+    <div class="w-full lg:flex-row lg:flex lg:gap-x-5 md:flex flex flex-col md:justify-start md:items-start">
+        <!-- sidenav -->
+        <div
+            class="text-black hidden w-1/5 flex-col justify-between h-[calc(100vh-57px)] sticky top-14 mt-14 py-7 bg-white  shadow-lg md:hidden lg:flex">
+            <div class="flex px-10">
+                <div class="flex flex-col justify-center py-3 gap-y-3 w-full">
+                    <div class="text-lg"><i class="fa-solid fa-house"></i> Home</div>
+                    <div class="text-lg"><i class="fa-solid fa-house"></i> Explore</div>
+                    <div class="text-lg"><i class="fa-solid fa-house"></i> Home</div>
+                    <div
+                        class="px-5 py-1 -ml-5 text-lg text-black font-semibold bg-[#0000002a] rounded-xl w-[calc(100%+1.25rem)]">
+                        <i class="fa-solid fa-house"></i> Profile
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-around w-full">
+                <div><i class="text-2xl fa-solid fa-calendar-days"></i></div>
+                <div><i class="text-2xl fa-regular fa-bookmark"></i></div>
+                <div><i class="text-2xl fa-solid fa-gear"></i></div>
+            </div>
+        </div>
+
+        <!-- list section -->
+        <div class="relative flex mt-32 lg:mt-32 md:w-full px-2 flex-[5] pb-16">
+            <button
+                class="transition border-black hover:bg-white border hover:border-black hover:text-black absolute -top-12  right-3  mt-1 bg-black text-white flex items-center gap-x-2 px-3 py-1 rounded"><i
+                    class="fa-solid fa-arrow-left"></i> <span class="hidden md:block">Back</span></button>
+
+            <div class="flex flex-col items- gap-y-10 w-full">
+                <div class="flex justify-start gap-x-2 md:gap-x-10 items-end bg-[#00000036] px-3 py-2 rounded-md">
+                    <button
+                        class="text-white font-bold  bg-black px-2 py-1 rounded-md hover:bg-white hover:text-black transition">Followers</button>
+                    <button
+                        class="text-[#686868] font-bold px-2 py-1 rounded-md hover:bg-white hover:text-black transition">Following</button>
+                    <button
+                        class="text-[#686868] font-bold px-2 py-1 rounded-md hover:bg-white hover:text-black transition">Groups</button>
+                </div>
+
+                <div class="flex flex-col gap-y-3">
+                    <div
+                        class="bg-white px-3 py-2 rounded-md flex g items-center flex-wrap gap-y-2 justify-between max-[470px]:flex-col max-[470px]:items-start w-full">
+                        <div class="flex gap-x-5 ">
+                            <div class="">
+                                <div><img src="profile.webp" class="rounded-lg w-14 h-14" alt=""></div>
+                            </div>
+                            <div class="flex flex-col   gap-y-1 ">
+                                <p class="font-bold cursor-pointer hover:underline transition">Aarya Balan</p>
+                                <p>@night_owl</p>
+                                <p class="break-words">#</p>
+                            </div>
+                        </div>
+                        <div class="self-center">
+                            <button
+                                class="bg-[#6feb8627] px-2 py-1 rounded-md text-[#6feb85] font-bold border border-[#6feb85] transition hover:bg-[#6feb85] hover:text-black">Follow</button>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="bg-white px-3 py-2 rounded-md flex  items-center w-full flex-wrap gap-y-2 justify-between max-[470px]:flex-col max-[470px]:items-start">
+                        <div class="flex gap-x-5 ">
+                            <div class="">
+                                <div><img src="profile.webp" class="rounded-lg w-14 h-14" alt=""></div>
+                            </div>
+                            <div class="flex flex-col  gap-y-1 ">
+                                <p class="font-bold cursor-pointer hover:underline transition">Aarya Balan</p>
+                                <p>@night_owl</p>
+                                <p class="break-words">#aaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                            </div>
+                        </div>
+                        <div class="self-center">
+                            <button
+                                class="bg-[#6feb8627] px-2 py-1 rounded-md text-[#6feb85] font-bold border border-[#6feb85] transition hover:bg-[#6feb85] hover:text-black">Follow</button>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="bg-white px-3 py-2 rounded-md flex  items-center w-full flex-wrap gap-y-2 justify-between max-[470px]:flex-col max-[470px]:items-start">
+                        <div class="flex gap-x-5 ">
+                            <div class="">
+                                <div><img src="profile.webp" class="rounded-lg w-14 h-14" alt=""></div>
+                            </div>
+                            <div class="flex flex-col w-4/5 gap-y-1 ">
+                                <p class="font-bold cursor-pointer hover:underline transition">Aarya Balan</p>
+                                <p>@night_owl</p>
+                                <p class="break-words">#aaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                            </div>
+                        </div>
+                        <div class="self-center">
+                            <button
+                                class="bg-[#6feb8627] px-2 py-1 rounded-md text-[#6feb85] font-bold border border-[#6feb85] transition hover:bg-[#6feb85] hover:text-black">Follow</button>
+                        </div>
+                    </div>
+
+
+
+                    <div
+                        class="bg-white px-3 py-2 rounded-md flex  items-center w-full flex-wrap gap-y-2 justify-between max-[470px]:flex-col max-[470px]:items-start">
+                        <div class="flex gap-x-5 ">
+                            <div class="">
+                                <div><img src="profile.webp" class="rounded-lg w-14 h-14" alt=""></div>
+                            </div>
+                            <div class="flex flex-col w-4/5 gap-y-1 ">
+                                <p class="font-bold cursor-pointer hover:underline transition">Aarya Balan</p>
+                                <p>@night_owl</p>
+                                <p class="break-words">#aaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                            </div>
+                        </div>
+                        <div class="self-center">
+                            <button
+                                class="bg-[#6feb8627] px-2 py-1 rounded-md text-[#6feb85] font-bold border border-[#6feb85] transition hover:bg-[#6feb85] hover:text-black">Follow</button>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white px-3 py-2 rounded-md flex items-center w-full flex-wrap gap-y-2 justify-between max-[470px]:flex-col max-[470px]:items-start">
+                        <div class="flex gap-x-5 ">
+                            <div class="">
+                                <div><img src="profile.webp" class="rounded-lg w-14 h-14" alt=""></div>
+                            </div>
+                            <div class="flex flex-col w-4/5 gap-y-1 ">
+                                <p class="font-bold cursor-pointer hover:underline transition">Aarya Balan</p>
+                                <p>@night_owl</p>
+                                <p class="break-words">Hello friend, hope you're good!</p>
+                            </div>
+                        </div>
+                        <div class="self-center">
+                            <button
+                                class="bg-[#6feb8627] px-2 py-1 rounded-md text-[#6feb85] font-bold border border-[#6feb85] transition hover:bg-[#6feb85] hover:text-black">Following</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- skill project section -->
+        <div
+            class=" hidden lg:flex flex-col px-4 mt-10 lg:w-1/4 lg:flex-col lg:mt-28 gap-y-5 md:flex-row md:w-full md:gap-x-5 md:mr-3 rounded-md">
+
+            <div class="flex flex-col px-2 py-4 pb-20 bg-white md:pb-4 gap-y-5 md:w-1/2 lg:w-full rounded-md">
+                <h1 class="text-xl font-bold text-center">Projects;</h1>
+                <div class="flex flex-col gap-y-2 border border-[#6868682f] p-2 rounded-md">
+                    <div class="flex items-start w-full gap-x-3">
+                        <div class="w-20 h-20 lg:w-1/5">
+                            <img src="projects.jpeg" class="rounded-md" alt="">
+                        </div>
+                        <div class="flex flex-col w-4/5 gap-y-2">
+                            <div class="font-semibold">Project Name</div>
+                            <div class="text-justify">est tempore temporibdolorum a aut quas labore...</div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+                        <div class="bg-[#edaa191e] px-2 py-1 border border-[#edab19] text-[#edab19] rounded-md">Progress
+                        </div>
+                        <div
+                            class="cursor-pointer bg-[#00000031] px-2 py-1 border border-[#000000] text-[#000000] rounded-md">
+                            View</div>
+                    </div>
+                </div>
+
+
+                <div class="flex flex-col gap-y-2 border border-[#6868682f] p-2 rounded-md">
+                    <div class="flex items-start w-full gap-x-3">
+                        <div class="w-20 h-20 lg:w-1/5">
+                            <img src="projects.jpeg" class="rounded-md" alt="">
+                        </div>
+                        <div class="flex flex-col w-4/5 gap-y-2">
+                            <div class="font-semibold">Project Name</div>
+                            <div class="text-justify">est tempore temporibdolorum a aut quas labore...</div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+                        <div class="bg-[#edaa191e] px-2 py-1 border border-[#edab19] text-[#edab19] rounded-md">Progress
+                        </div>
+
+                        <div
+                            class="cursor-pointer bg-[#00000031] px-2 py-1 border border-[#000000] text-[#000000] rounded-md">
+                            View
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-y-2 border border-[#6868682f] p-2 rounded-md">
+                    <div class="flex items-start w-full gap-x-3">
+                        <div class="w-20 h-20 lg:w-1/5">
+                            <img src="projects.jpeg" class="rounded-md" alt="">
+                        </div>
+                        <div class="flex flex-col w-4/5 gap-y-2">
+                            <div class="font-semibold">Project Name</div>
+                            <div class="text-justify">est tempore temporibdolorum a aut quas labore...</div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+                        <div class="bg-[#edaa191e] px-2 py-1 border border-[#edab19] text-[#edab19] rounded-md">Progress
+                        </div>
+
+                        <div
+                            class="cursor-pointer bg-[#00000031] px-2 py-1 border border-[#000000] text-[#000000] rounded-md">
+                            View
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-y-2 border border-[#6868682f] p-2 rounded-md">
+                    <div class="flex items-start w-full gap-x-3">
+                        <div class="w-20 h-20 lg:w-1/5">
+                            <img src="projects.jpeg" class="rounded-md" alt="">
+                        </div>
+                        <div class="flex flex-col w-4/5 gap-y-2">
+                            <div class="font-semibold">Project Name</div>
+                            <div class="text-justify">est tempore temporibdolorum a aut quas labore...</div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+                        <div class="bg-[#edaa191e] px-2 py-1 border border-[#edab19] text-[#edab19] rounded-md">Progress
+                        </div>
+
+                        <div
+                            class="cursor-pointer bg-[#00000031] px-2 py-1 border border-[#000000] text-[#000000] rounded-md">
+                            View
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="flex flex-col gap-y-2 border border-[#6868682f] p-2 rounded-md">
+                    <div class="flex items-start w-full gap-x-3">
+                        <div class="w-20 h-20 lg:w-1/5">
+                            <img src="profile.webp" class="rounded-md" alt="">
+                        </div>
+                        <div class="flex flex-col w-4/5 gap-y-2">
+                            <div class="font-semibold">Project Name</div>
+                            <div class="text-justify">est tempore temporibdolorum a aut quas labore...</div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+                        <div class="bg-[#edaa191e] px-2 py-1 border border-[#edab19] text-[#edab19] rounded-md">Progress
+                        </div>
+
+                        <div
+                            class="cursor-pointer bg-[#00000031] px-2 py-1 border border-[#000000] text-[#000000] rounded-md">
+                            View
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

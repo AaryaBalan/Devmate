@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload & Crop (4:3 Ratio)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        #preview-container { 
+            width: 400px; /* Set the width */
+            height: 300px; /* Set the height */
+            overflow: hidden; 
+            margin: 10px auto;
+            border: 2px solid #ccc;
+            position: relative;
+        }
+        #preview-image { 
+            max-width: 100%; 
+            display: none;
+        }
+        #cropped-container { margin-top: 10px; }
+        button { margin: 5px; padding: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h2>Upload and Crop Image (4:3 Aspect Ratio)</h2>
+    <label for="imageInput"><img src="profile.webp" alt=""></label>
+    <input type="file" id="imageInput" accept="image/*">
+    <div id="preview-container">
+        <img id="preview-image">
+    </div>
+    <button id="cropButton" style="display: none;">Crop & Upload</button>
+    <div id="cropped-container"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+    <script>
+        let cropper;
+        const imageInput = document.getElementById('imageInput');
+        const previewImage = document.getElementById('preview-image');
+        const cropButton = document.getElementById('cropButton');
+        const croppedContainer = document.getElementById('cropped-container');
+
+        imageInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    previewImage.src = reader.result;
+                    previewImage.style.display = 'block';
+
+                    if (cropper) {
+                        cropper.destroy();
+                    }
+                    
+                    cropper = new Cropper(previewImage, {
+                        aspectRatio: 4 / 3, // Uniform 4:3 aspect ratio
+                        viewMode: 2,
+                        autoCropArea: 1,
+                    });
+
+                    cropButton.style.display = 'inline-block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        cropButton.addEventListener('click', () => {
+            const canvas = cropper.getCroppedCanvas({ width: 400, height: 300 }); // 4:3 aspect ratio
+            croppedContainer.innerHTML = `<img src="${canvas.toDataURL()}" width="200">`;
+
+            // Convert cropped image to a Blob and prepare for upload
+            canvas.toBlob((blob) => {
+                const formData = new FormData();
+                formData.append('croppedImage', blob, 'cropped-image.jpg');
+
+                // Example: Upload to server (adjust the URL)
+                fetch('/upload', {
+                    method: 'POST',
+                    body: formData,
+                })
+                .then(response => response.json())
+                .then(data => console.log('Upload successful:', data))
+                .catch(error => console.error('Upload error:', error));
+            }, 'image/jpeg');
+        });
+    </script>
+
+</body>
+</html>

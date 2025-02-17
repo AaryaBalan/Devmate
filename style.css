@@ -1,0 +1,28 @@
+.dot {
+    background-image: radial-gradient(black 1px, transparent 1px);
+    background-size: 3px 3px;
+}
+
+.dot-white {
+    background-image: radial-gradient(white 3px, transparent 1px);
+    background-size: 10px 10px;
+}
+
+progress {
+    width: 300px;
+    background: #6feb85;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #a5a0a0;
+}
+
+progress::-webkit-progress-value {
+    background-color: black;
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 3px 3px;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}

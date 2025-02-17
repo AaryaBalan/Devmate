@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d8ca3bfef7.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="text-[15px] h-full bg-[#f6f6f6] overflow-x-hidden">
+    <!-- navbar -->
+    <div class="fixed top-0 z-20 flex w-full text-white bg-black">
+        <nav class="flex items-center w-full px-10 py-4 justify-evenly">
+            <div class="flex items-center w-full gap-x-5">
+                <div class="py-1 text-xl font-bold">
+                    DevMate
+                </div>
+                <div class="hidden md:flex">
+                    <input type="text"
+                        class="outline-none border border-black rounded-xl text-[16px] px-2 py-1 text-black"
+                        placeholder="Search..">
+                </div>
+            </div>
+
+            <div class="flex gap-x-10">
+                <div>
+                    <i class="text-xl fa-solid fa-bell"></i>
+                </div>
+                <div class="relative">
+                    <i class="hidden text-xl md:block fa-solid fa-circle-user"></i>
+                    <i class="text-xl md:hidden fa-solid fa-gear" onclick="showPopup()"></i>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- phone navbar popup -->
+    <div class="hidden right-5 top-20 bg-[#00000057] backdrop-blur px-5 py-3 rounded-md z-20 lg:hidden" id="popup">
+        <div class="flex flex-col gap-y-2">
+            <div class="px-2 py-1 text-white rounded-md cursor-pointer hover:bg-[#ffffff60]">Edit Profile</div>
+            <div class="px-2 py-1 text-white rounded-md cursor-pointer hover:bg-[#ffffff60]">Saved</div>
+            <div class="px-2 py-1 text-white rounded-md cursor-pointer hover:bg-[#ffffff60]">Dark Theme</div>
+        </div>
+    </div>
+
+
+    <!-- phone navbar -->
+    <div class="z-10 fixed bottom-0 w-full py-2 bg-[#00000057] backdrop-blur lg:hidden">
+        <div class="flex justify-around">
+            <div><i class="text-xl fa-solid fa-house"></i></div>
+            <div><i class="text-xl fa-regular fa-compass"></i></div>
+            <div><i class="text-xl fa-solid fa-house"></i></div>
+            <div><i class="text-xl fa-regular fa-circle-user"></i></div>
+        </div>
+    </div>
+
+
+    <!-- main section -->
+
+    <div class="flex w-full gap-x-5 lg:gap-x-2">
+        <!-- sidenav -->
+        <div
+            class="text-black hidden w-1/5 flex-col justify-between h-[calc(100vh-57px)] sticky top-14 mt-14 py-7 bg-white  shadow-lg md:hidden lg:flex">
+            <div class="flex px-10">
+                <div class="flex flex-col justify-center py-3 gap-y-3 w-full">
+                    <div class="text-lg"><i class="fa-solid fa-house"></i> Home</div>
+                    <div class="text-lg"><i class="fa-solid fa-house"></i> Explore</div>
+                    <div class="text-lg"><i class="fa-solid fa-house"></i> Home</div>
+                    <div
+                        class="px-5 py-1 -ml-5 text-lg text-black font-semibold bg-[#0000002a] rounded-xl w-[calc(100%+1.25rem)]">
+                        <i class="fa-solid fa-house"></i> Profile
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-around w-full">
+                <div><i class="text-2xl fa-solid fa-calendar-days"></i></div>
+                <div><i class="text-2xl fa-regular fa-bookmark"></i></div>
+                <div><i class="text-2xl fa-solid fa-gear"></i></div>
+            </div>
+        </div>
+
+        <!-- explore section -->
+        <div class="flex flex-[5] flex-col flex-wrap mt-20 md:mt-32 gap-y-0 md:gap-y-5 lg:px-4 px-6">
+
+
+            <div class="flex gap-x-1 flex-wrap gap-y-2 items-center justify-center absolute top-20">
+                <div class="flex flex-col gap-y-2 items-center">
+                    <div class="flex gap-x-2 items-center bg-black text-white px-5 py-1">
+                        <div id="exploreTitle" onclick="getExplore.call(this)" class="cursor-pointer">Projects</div>
+                        <img src="down.svg" alt="" class="w-7 h-7" onclick="getExplore.call()">
+                    </div>
+                    <div class="hidden flex-col gap-y-1 bg-[#00000033] px-5 py-2 absolute top-12 left-0 z-10 backdrop-blur rounded"
+                        id="allExplore">
+                        <a href="exploreOther.html"
+                            class="hover:scale-110 transition-all hover:font-bold px-3 py-1 cursor-pointer"
+                            onclick="getExplore.call(this)">
+                            Projects</a>
+                        <a href="events.html" class="hover:scale-110 transition-all hover:font-bold px-3 py-1 cursor-pointer"
+                            onclick="getExplore.call(this)">Events
+                        </a>
+                        <a href="exploreOrganization.html" class="hover:scale-110 transition-all hover:font-bold px-3 py-1 cursor-pointer"
+                            onclick="getExplore.call(this)">
+                            Organizations</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-y-10 w-full mb-16">
+                <!-- top section, search bar and filter option -->
+                <div
+                    class="w-full flex flex-row items-center justify-evenly  md:flex-row gap-x-5 gap-y-5 max-[450px]:flex-col mt-14 md:mt-0">
+                    <div class="flex items-center gap-x-4  w-fit justify-center max-[450px]:w-full">
+                        <div class="flex gap-x-3 items-center">
+                            <input type="text"
+                                class="md:w-96 w-full outline-none border border-black rounded-full border- bg-[#f6f6f6] text-[16px] px-2 py-1 text-black"
+                                placeholder="Search..">
+                            <div class="flex gap-x-2 border px-3 py-1 border-black rounded-full cursor-pointer">
+                                <img src="search.svg" alt="" class="w-6 h-6">
+                                <p class="hidden md:block">Search</p>
+                            </div>
+                        </div>
+                        <div class="lg:hidden flex" onclick="openFilter()">
+                            <button class="flex items-center gap-x-2"><i class="fa-solid fa-filter"></i> <span
+                                    class="hidden md:block">Filter</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- projects area fill all the projects inside this div -->
+                <div class="flex flex-col items-start w-full gap-y-5">
+                    <!-- start of 1st project -->
+                    <div class="relative flex flex-col px-5 py-3 bg-white rounded-lg gap-y-4 w-full">
+                        <div class="flex items-center justify-between gap-x-5">
+                            <div class="flex items-start w-full gap-x-1">
+                                <div class="w-1/6 md:w-[10%]"><img src="profile.webp" alt=""
+                                        class="w-12 h-12 rounded-md"></div>
+                                <div class="w-5/6 md:w-[90%]">
+                                    <a href="https://v3.tailwindcss.com/docs/scroll-behavior"
+                                        class="font-bold text-[18px] cursor-pointer">Lorem</a>
+                                    <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum ex perspiciatis
+                                        optio reprehenderit, officiis earum inventore ea m</div>
+                                    <div class="text-[#686868] flex justify-between mt-5 gap-x-1">
+                                        <div class="flex items-start gap-x-1 flex-col md:flex-row md:items-center">
+                                            <span>Author</span> <span class="hidden md:block">&#9679;</span> <span>13
+                                                Applicats</span>
+                                        </div>
+                                        <p class="self-end">28 Jan 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="absolute right-3 top-2 flex items-start gap-x-5">
+                                <i class="text-xl fa-solid fa-certificate"></i>
+                                <i
+                                    class="text-xl fa-regular fa-bookmark hover:scale-[1.3] transition cursor-pointer"></i>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="flex items-center justify-between gap-x-5">
+                            <div class="flex items-center gap-x-5">
+
+                                <div><i class="text-2xl fa-brands fa-github cursor-pointer"></i></div>
+                                <div class="underline">Django</div>
+                                <div class="underline">React</div>
+                            </div>
+                            <div class="flex items-center gap-x-2 text-[#686868]">
+
+                                <!-- <p class="px-2 py-1 text-black border border-black rounded-md">Free</p> -->
+                                <button
+                                    class="bg-[#6feb85] px-2 py-1 rounded-md text-white font-bold border border-[#6feb85] transition hover:scale-[1.2]">Join</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of 1st project -->
+
+                    <div class="relative flex flex-col px-5 py-3 bg-white rounded-lg gap-y-4 w-full">
+                        <div class="flex items-center justify-between gap-x-5">
+                            <div class="flex items-start w-full gap-x-1">
+                                <div class="w-1/6 md:w-[10%]"><img src="profile.webp" alt=""
+                                        class="w-12 h-12 rounded-md"></div>
+                                <div class="w-5/6 md:w-[90%]">
+                                    <div class="font-bold text-[18px] cursor-pointer">Lorem</div>
+                                    <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum ex perspiciatis
+                                        optio reprehenderit, officiis earum inventore ea m</div>
+                                    <div class="text-[#686868] flex justify-between mt-5 gap-x-1">
+                                        <div class="flex items-start gap-x-1 flex-col md:flex-row md:items-center">
+                                            <span>Author</span> <span class="hidden md:block">&#9679;</span> <span>13
+                                                Applicats</span>
+                                        </div>
+                                        <p class="self-end">28 Jan 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="absolute right-3 top-2 flex items-start gap-x-5">
+                                <i class="text-xl fa-solid fa-certificate"></i>
+                                <i
+                                    class="text-xl fa-regular fa-bookmark hover:scale-[1.3] transition cursor-pointer"></i>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="flex items-center justify-between gap-x-5">
+                            <div class="flex items-center gap-x-5">
+
+                                <div><i class="text-2xl fa-brands fa-github cursor-pointer"></i></div>
+                                <div class="underline">Django</div>
+                                <div class="underline">React</div>
+                            </div>
+                            <div class="flex items-center gap-x-2 text-[#686868]">
+
+                                <!-- <p class="px-2 py-1 text-black border border-black rounded-md">Free</p> -->
+                                <button
+                                    class="bg-[#6feb85] px-2 py-1 rounded-md text-white font-bold border border-[#6feb85] transition hover:scale-[1.2]">Join</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="relative flex flex-col px-5 py-3 bg-white rounded-lg gap-y-4 w-full">
+                        <div class="flex items-center justify-between gap-x-5">
+                            <div class="flex items-start w-full gap-x-1">
+                                <div class="w-1/6 md:w-[10%]"><img src="profile.webp" alt=""
+                                        class="w-12 h-12 rounded-md"></div>
+                                <div class="w-5/6 md:w-[90%]">
+                                    <div class="font-bold text-[18px] cursor-pointer">Lorem</div>
+                                    <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum ex perspiciatis
+                                        optio reprehenderit, officiis earum inventore ea m</div>
+                                    <div class="text-[#686868] flex justify-between mt-5 gap-x-1">
+                                        <div class="flex items-start gap-x-1 flex-col md:flex-row md:items-center">
+                                            <span>Author</span> <span class="hidden md:block">&#9679;</span> <span>13
+                                                Applicats</span>
+                                        </div>
+                                        <p class="self-end">28 Jan 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="absolute right-3 top-2 flex items-start gap-x-5">
+                                <i class="text-xl fa-solid fa-certificate"></i>
+                                <i
+                                    class="text-xl fa-regular fa-bookmark hover:scale-[1.3] transition cursor-pointer"></i>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="flex items-center justify-between gap-x-5">
+                            <div class="flex items-center gap-x-5">
+
+                                <div><i class="text-2xl fa-brands fa-github cursor-pointer"></i></div>
+                                <div class="underline">Django</div>
+                                <div class="underline">React</div>
+                            </div>
+                            <div class="flex items-center gap-x-2 text-[#686868]">
+
+                                <!-- <p class="px-2 py-1 text-black border border-black rounded-md">Free</p> -->
+                                <button
+                                    class="bg-[#6feb85] px-2 py-1 rounded-md text-white font-bold border border-[#6feb85] transition hover:scale-[1.2]">Join</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- filter section -->
+        <div class="absolute lg:sticky top-0 flex-col hidden mr-0 lg:mr-2 lg:w-1/4 lg:h-[calc(100vh-40px)] lg:top-5 gap-y-8 lg:flex overflow-y-scroll"
+            id="openFilterParent">
+            <div class="lg:relative bg-[#00000057] backdrop-blur-md w-[calc(100%-80px)] md:w-3/4 lg:w-full top-16 right-0 flex-col hidden px-5 py-10 lg:mt-  overflow-y-scroll lg:bg-white rounded-lg h-[100%] bottom-2 lg: lg:h-full gap-y-8 lg:flex"
+                id="filterElement">
+                <button class="absolute lg:hidden top-5 right-5" onclick="closeFilter()"><i
+                        class="text-2xl text-[#e83f4f] fa-solid fa-circle-xmark"></i></button>
+                <h1 class="text-xl font-bold text-center">
+                    < Filters />
+                </h1>
+                <div class="flex flex-col gap-y-3">
+                    <h1 class="text-xl font-bold">Duration</h1>
+                    <div class="flex flex-wrap gap-2 items-center">
+                        <button
+                            class="focus:text-white focus:border-black focus:bg-black lg:bg-[#6feb8627] px-2 py-1 rounded-md lg:text-[#6feb85] bg-[#6feb85] text-black font-bold border border-[#6feb85]">
+                            1-2 Weeks</button>
+                        <button
+                            class="focus:text-white focus:border-black focus:bg-black lg:bg-[#6feb8627] px-2 py-1 rounded-md lg:text-[#6feb85] bg-[#6feb85] text-black font-bold border border-[#6feb85]">
+                            1-2 Weeks</button>
+                        <button
+                            class="focus:text-white focus:border-black focus:bg-black lg:bg-[#6feb8627] px-2 py-1 rounded-md lg:text-[#6feb85] bg-[#6feb85] text-black font-bold border border-[#6feb85]">
+                            1-2 Weeks</button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-y-3">
+                    <h1 class="text-xl font-bold">Level</h1>
+                    <div class="flex flex-wrap gap-2">
+                        <button
+                            class="focus:text-white focus:border-black focus:bg-black lg:bg-[#6feb8627] px-2 py-1 rounded-md lg:text-[#6feb85] bg-[#6feb85] text-black font-bold border border-[#6feb85]">
+                            Beginner</button>
+                        <button
+                            class="focus:text-white focus:border-black focus:bg-black lg:bg-[#6feb8627] px-2 py-1 rounded-md lg:text-[#6feb85] bg-[#6feb85] text-black font-bold border border-[#6feb85]">
+                            Intermediate</button>
+                        <button
+                            class="focus:text-white focus:border-black focus:bg-black lg:bg-[#6feb8627] px-2 py-1 rounded-md lg:text-[#6feb85] bg-[#6feb85] text-black font-bold border border-[#6feb85]">
+                            Expert</button>
+                    </div>
+                </div>
+
+
+                <div class="flex flex-col gap-y-3">
+                    <h1 class="text-xl font-bold">Type</h1>
+                    <div class="flex flex-wrap gap-2">
+                        <button
+                            class="focus:text-white focus:border-black focus:bg-black lg:bg-[#6feb8627] px-2 py-1 rounded-md lg:text-[#6feb85] bg-[#6feb85] text-black font-bold border border-[#6feb85]">
+                            Free</button>
+                        <button
+                            class="focus:text-white focus:border-black focus:bg-black lg:bg-[#6feb8627] px-2 py-1 rounded-md lg:text-[#6feb85] bg-[#6feb85] text-black font-bold border border-[#6feb85]">
+                            Paid</button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-y-3">
+                    <h1 class="text-xl font-bold">Domains</h1>
+                    <div class="flex flex-wrap gap-2">
+                        <button
+                            class="focus:text-white focus:border-black focus:bg-black lg:bg-[#6feb8627] px-2 py-1 rounded-md lg:text-[#6feb85] bg-[#6feb85] text-black font-bold border border-[#6feb85]">
+                            Web Development</button>
+                        <button
+                            class="focus:text-white focus:border-black focus:bg-black lg:bg-[#6feb8627] px-2 py-1 rounded-md lg:text-[#6feb85] bg-[#6feb85] text-black font-bold border border-[#6feb85]">
+                            Mobile Development</button>
+                        <button
+                            class="focus:text-white focus:border-black focus:bg-black lg:bg-[#6feb8627] px-2 py-1 rounded-md lg:text-[#6feb85] bg-[#6feb85] text-black font-bold border border-[#6feb85]">
+                            Data Science and AI</button>
+                        <button
+                            class="focus:text-white focus:border-black focus:bg-black lg:bg-[#6feb8627] px-2 py-1 rounded-md lg:text-[#6feb85] bg-[#6feb85] text-black font-bold border border-[#6feb85]">
+                            Cloud and DevOps</button>
+                        <button
+                            class="focus:text-white focus:border-black focus:bg-black lg:bg-[#6feb8627] px-2 py-1 rounded-md lg:text-[#6feb85] bg-[#6feb85] text-black font-bold border border-[#6feb85]">
+                            Game Development</button>
+                        <button
+                            class="focus:text-white focus:border-black focus:bg-black lg:bg-[#6feb8627] px-2 py-1 rounded-md lg:text-[#6feb85] bg-[#6feb85] text-black font-bold border border-[#6feb85]">
+                            Embedded Systems</button>
+                        <button
+                            class="focus:text-white focus:border-black focus:bg-black lg:bg-[#6feb8627] px-2 py-1 rounded-md lg:text-[#6feb85] bg-[#6feb85] text-black font-bold border border-[#6feb85]">
+                            Cybersecurity</button>
+                        <button
+                            class="focus:text-white focus:border-black focus:bg-black lg:bg-[#6feb8627] px-2 py-1 rounded-md lg:text-[#6feb85] bg-[#6feb85] text-black font-bold border border-[#6feb85]">
+                            Blockchain</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

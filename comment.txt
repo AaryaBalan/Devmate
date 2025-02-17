@@ -1,0 +1,69 @@
+<!-- comments section  -->
+<div class=" m-auto md:w-[90%] lg:w-[900px] flex flex-col gap-y-5">
+    <!-- text area and submit btn -->
+    <div class="flex flex-col gap-y-3">
+        <form class="flex flex-col gap-y-3">
+            <textarea name="" id="commentTextArea"
+                class="h-44 outline-none p-2 border-dashed border-[#0000002c] border-2 rounded-md"
+                placeholder="Comment...."></textarea>
+            <button type="submit" class="self-end bg-black text-white px-5 py-1 rounded">Submit</button>
+        </form>
+    </div>
+
+    <!-- all comments section -->
+    <div class="flex flex-col gap-y-10 bg-white px-3 py-10 rounded-md">
+        <div class="text-2xl">Comments <span class="text-[#686868]">3</span></div>
+
+        <!-- single comment -->
+        <div class="flex flex-col gap-y-8">
+            <!-- question -->
+            <div class="bg-[#0000002d] w-[95%] md:w-3/4 px-3 py-2 rounded-md">
+                <div class="flex gap-x-2 items-center">
+                    <img src="profile.webp" alt="" class="w-12 h-12 rounded-full">
+                    <p class="font-bold">Abinav kishore</p>
+                    <p class="text-[#686868]">31 Jan 2025</p>
+                </div>
+                <div class="flex items-end justify-between gap-x-3 relative pb-5">
+                    <div class="text-justify ">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid saepe distinctio
+                        maiores,
+                        magni, repellendus modi itaque possimus rerum dolor nam numquam repudiandae soluta optio
+                        nostrum
+                        temporibus nemo doloribus consectetur recusandae?
+                    </div>
+                    <a href="#commentTextArea"
+                        class="absolute right-5 -bottom-5 bg-black text-white px-5 py-1 rounded"
+                        onclick="handleReply('Abinav')">Reply</a>
+                </div>
+            </div>
+            <!-- question end -->
+
+            <!-- reply section -->
+            <div class="flex gap-x-2">
+                <div class="bg-black w-2 ml-5 rounded-full"></div>
+                <!-- single reply -->
+                <div class="flex flex-col gap-y-3">
+                    <div
+                        class="ml-auto max-w-[95%] md:max-w-[75%] bg-[#f6f6f6] px-3 py-2 rounded-md flex flex-col gap-y-3">
+                        <div class="flex gap-x-2 items-center flex-wrap">
+                            <img src="profile.webp" alt="" class="w-12 h-12 rounded-full">
+                            <p class="font-bold">Abinav kishore</p>
+                        </div>
+                        <div class="text-justify">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid saepe distinctio
+                            maiores,
+                            magni, repellendus modi itaque possimus rerum dolor nam numquam repudiandae soluta
+                            optio
+                            nostrum
+                            temporibus nemo doloribus consectetur recusandae?
+                        </div>
+                        <p class="text-[#686868] text-right w-full">31 Jan 2025</p>
+                    </div>
+                </div>
+                <!-- single reply end -->
+            </div>
+        </div>
+
+        <button class="bg-black px-3 py-1 text-white rounded-md hover:bg-[#00000067] hover:text-black w-fit self-center">See all comments</button>
+    </div>
+</div>

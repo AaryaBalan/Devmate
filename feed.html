@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d8ca3bfef7.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="text-[15px] h-full bg-[#f6f6f6] overflow-x-hidden">
+    <!-- navbar -->
+    <div class="fixed flex w-full text-white bg-black">
+        <nav class="flex items-center w-full px-10 py-4 justify-evenly">
+            <div class="flex items-center w-full gap-x-5">
+                <div>
+                    DevMate
+                </div>
+                <div>
+                    <input type="text"
+                        class="outline-none border border-black rounded-xl text-[16px] px-2 py-1 text-black"
+                        placeholder="Search..">
+                </div>
+            </div>
+
+            <div class="flex gap-x-5">
+                <div>
+                    <i class="text-xl fa-solid fa-bell"></i>
+                </div>
+                <div>
+                    <i class="text-xl fa-solid fa-circle-user"></i>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="flex justify-between w-full gap-x-10">
+        <!-- sidenav -->
+        <div
+            class="dot text-black flex flex-col justify-between w-1/5 h-[calc(100vh-66px)] sticky mt-[66px] top-[66px]  py-7 bg-[#eeeeee]">
+            <div class="flex flex-col justify-center py-3 pl-4 gap-y-4">
+                <div class="p-2 rounded-l-full text-[#373737] bg-[#6feb85]"><i class="fa-solid fa-house"></i> Home</div>
+                <div class="p-2 rounded-l-full text-[#373737] bg-[#f6f6f6]"><i class="fa-solid fa-house"></i> Home</div>
+                <div class="p-2 rounded-l-full text-[#373737] bg-[#f6f6f6]"><i class="fa-solid fa-house"></i> Home</div>
+                <div class="p-2 rounded-l-full text-[#373737] bg-[#f6f6f6]"><i class="fa-solid fa-house"></i> Home</div>
+            </div>
+            <div class="flex justify-around w-full">
+                <div><i class="text-2xl fa-solid fa-calendar-days"></i></div>
+                <div><i class="text-2xl fa-regular fa-bookmark"></i></div>
+                <div><i class="text-2xl fa-solid fa-gear"></i></div>
+            </div>
+        </div>
+
+        <!-- feed content -->
+        <div class="flex flex-col w-2/4 mt-28 gap-y-8">
+            <!-- feed place  -->
+
+            <!-- toggle tab -->
+            <div class="flex gap-x-5  px-4 py-3 rounded-md w-fit bg-[#00000073] ">
+                <div class="bg-[#6feb85] text-black rounded-md px-2 py-1 cursor-pointer">Developers</div>
+                <div class="bg-[#5c6bc0] text-white rounded-md px-2 py-1 cursor-pointer">Organaizations</div>
+                <div class="bg-[#5c6bc0] text-white rounded-md px-2 py-1 cursor-pointer">Projects</div>
+            </div>
+
+            <!-- feed section container -->
+            <div class="flex flex-col gap-y-10"> 
+                <!-- Put all feed here -->
+                <div class="flex flex-col gap-y-5">
+                    <!-- thumbnail and likes, dislikes, comments  -->
+                    <div class="flex flex-col shadow-lg w-[500px] rounded-xl">
+                        <div class="flex w-full px-5 py-2 bg-white gap-x-5 rounded-t-xl">
+                            <div>
+                                <i class="text-4xl fa-solid fa-circle-user"></i>
+                            </div>
+                            <div>
+                                <div>@javascript_mastery <span class="text-[#5a5959]">2h</span></div>
+                                <div class="text-[#5a5959]">Californiya, Unites States</div>
+                            </div>
+                        </div>
+                        <div class="bg-[#5c6bc0] h-60 w-full">
+                            <!-- img thumbnail -->
+                            <img class="object-cover w-full h-60" src="thumbnail.png" alt="">
+                        </div>
+                        <div class="flex justify-between w-full px-5 py-2 bg-white gap-x-5 rounded-b-xl">
+                            <div
+                                class="rounded-md bg-white flex items-center p-1 cursor-pointer hover:bg-[#6feb85] gap-x-2">
+                                <p>2.3M</p>
+                                <i class="text-xl fa-regular fa-heart"></i>
+                            </div>
+                            <div
+                                class="flex items-center p-1 text-black rounded-md cursor-pointer gap-x-2 hover:bg-black hover:text-white">
+                                <p>2</p>
+                                <i class="text-xl fa-regular fa-message"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- comments section -->
+                    <div class="flex flex-col px-4 py-5 bg-white rounded-md shadow-md gap-y-5">
+                        <!-- comments -->
+                        <div class="flex items-center gap-x-5">
+                            <div>
+                                <!-- Profile img -->
+                                <img class="rounded-full h-14 w-14" src="profile.webp" alt="">
+                            </div>
+                            <div class="bg-[#f6f6f6] p-2 rounded-lg flex flex-col gap-y-2">
+                                <!-- content -->
+                                <div class="text-[15px]">
+                                    <!-- name and time --> <span class="text-[#fc6798]">Aarya</span> <span
+                                        class="text-[#686868]">1 day ago</span>
+                                </div>
+                                <div>
+                                    <!-- content -->
+                                    Very detailed and insightful!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-x-5">
+                            <div>
+                                <!-- Profile img -->
+                                <img class="rounded-full h-14 w-14" src="profile.webp" alt="">
+                            </div>
+                            <div class="bg-[#f6f6f6] p-2 rounded-lg flex flex-col gap-y-2">
+                                <!-- content -->
+                                <div class="text-[15px]">
+                                    <!-- name and time --> <span class="text-[#fc6798]">Aarya</span> <span
+                                        class="text-[#686868]">1 day
+                                        ago</span>
+                                </div>
+                                <div>
+                                    <!-- content -->
+                                    Very detailed and insightful!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-y-5">
+                    <!-- thumbnail and likes, dislikes, comments  -->
+                    <div class="flex flex-col shadow-lg w-[500px] rounded-xl">
+                        <div class="flex w-full px-5 py-2 bg-white gap-x-5 rounded-t-xl">
+                            <div>
+                                <i class="text-4xl fa-solid fa-circle-user"></i>
+                            </div>
+                            <div>
+                                <div>@javascript_mastery <span class="text-[#5a5959]">2h</span></div>
+                                <div class="text-[#5a5959]">Californiya, Unites States</div>
+                            </div>
+                        </div>
+                        <div class="bg-[#5c6bc0] h-60 w-full">
+                            <!-- img thumbnail -->
+                            <img class="object-cover w-full h-60" src="thumbnail.png" alt="">
+                        </div>
+                        <div class="flex justify-between w-full px-5 py-2 bg-white gap-x-5 rounded-b-xl">
+                            <div class="rounded-md bg-white flex items-center p-1 cursor-pointer hover:bg-[#6feb85] gap-x-2">
+                                <p>2.3M</p>
+                                <i class="text-xl fa-regular fa-heart"></i>
+                            </div>
+                            <div
+                                class="flex items-center p-1 text-black rounded-md cursor-pointer gap-x-2 hover:bg-black hover:text-white">
+                                <p>2</p>
+                                <i class="text-xl fa-regular fa-message"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- comments section -->
+                    <div class="flex flex-col px-4 py-5 bg-white rounded-md shadow-md gap-y-5">
+                        <!-- comments -->
+                        <div class="flex items-center gap-x-5">
+                            <div>
+                                <!-- Profile img -->
+                                <img class="rounded-full h-14 w-14" src="profile.webp" alt="">
+                            </div>
+                            <div class="bg-[#f6f6f6] p-2 rounded-lg flex flex-col gap-y-2">
+                                <!-- content -->
+                                <div class="text-[15px]">
+                                    <!-- name and time --> <span class="text-[#fc6798]">Aarya</span> <span class="text-[#686868]">1 day
+                                        ago</span>
+                                </div>
+                                <div>
+                                    <!-- content -->
+                                    Very detailed and insightful!
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="flex items-center gap-x-5">
+                            <div>
+                                <!-- Profile img -->
+                                <img class="rounded-full h-14 w-14" src="profile.webp" alt="">
+                            </div>
+                            <div class="bg-[#f6f6f6] p-2 rounded-lg flex flex-col gap-y-2">
+                                <!-- content -->
+                                <div class="text-[15px]">
+                                    <!-- name and time --> <span class="text-[#fc6798]">Aarya</span> <span class="text-[#686868]">1 day
+                                        ago</span>
+                                </div>
+                                <div>
+                                    <!-- content -->
+                                    Very detailed and insightful!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="mt-[84px] flex flex-col gap-y-5 w-1/4 p-2">
+            <div class="flex flex-col p-2 bg-white border border-gray-300 gap-y-2">
+                <!-- suggestions -->
+                <h1 class="mb-2 text-center">suggestions</h1>
+                <div class="flex flex-col items-center justify-center px-3 py-2 gap-y-2">
+                    <div class="flex items-center justify-end gap-x-4">
+                        <div>
+                            <img class="rounded-xl h-14 w-14" src="profile.webp" alt="">
+                        </div>
+                        <div>
+                            <div class="text-[16px] text-[#5c6bc0]">Name</div>
+                            <div class="text-[16px]">Bio: npm install tailwindcss</div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="bg-[#6feb85] text-white p-1 rounded-md shadow-md">Follow</button>
+                    </div>
+                </div>
+                <hr>
+                <div class="flex flex-col items-center justify-center px-3 py-2 gap-y-2 rounded-xl">
+                    <div class="flex items-center justify-end gap-x-4">
+                        <div>
+                            <img class="rounded-xl h-14 w-14" src="profile.webp" alt="">
+                        </div>
+                        <div>
+                            <div class="text-[16px] text-[#5c6bc0]">Name</div>
+                            <div class="text-[16px]">Bio: npm install tailwindcss</div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="bg-[#6feb85] text-white p-1 rounded-md shadow-md">Follow</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="flex flex-col p-2 bg-white gap-y-5">
+                <!-- Events -->
+                <h1 class="mb-2 text-center">Events</h1>
+                <div class="flex flex-col items-center gap-y-2">
+                    <div class="flex items-center gap-x-3">
+                        <div class="w-2 h-full bg-[#5c6bc0] rounded-md"></div>
+                        <div>
+                            <img class="rounded-full h-14 w-14" src="profile.webp" alt="">
+                        </div>
+                        <div class="flex flex-col gap-y-3">
+                            <div>Event name</div>
+                            <div class="flex flex-wrap gap-x-2">
+                                <div class="flex items-center gap-x-2"><i class="fa-solid fa-at"></i> July 13 </div>
+                                <div class="flex items-center gap-x-2"><i class="fa-solid fa-location-dot"></i> Location
+                                </div>
+                                <div class="flex items-center gap-x-2"><i class="fa-solid fa-users"></i> 1.2K</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="text-[#5c6bc0] px-2 py-1 rounded-md border border-[#5c6bc0]">Register</button>
+                </div>
+                <hr>
+                <div class="flex flex-col items-center gap-y-2">
+                    <div class="flex items-center gap-x-3">
+                        <div class="w-2 h-full bg-[#5c6bc0] rounded-md"></div>
+                        <div>
+                            <img class="rounded-full h-14 w-14" src="profile.webp" alt="">
+                        </div>
+                        <div class="flex flex-col gap-y-3">
+                            <div>Event name</div>
+                            <div class="flex flex-wrap gap-x-2">
+                                <div class="flex items-center gap-x-2"><i class="fa-solid fa-at"></i> July 13 </div>
+                                <div class="flex items-center gap-x-2"><i class="fa-solid fa-location-dot"></i> Location
+                                </div>
+                                <div class="flex items-center gap-x-2"><i class="fa-solid fa-users"></i> 1.2K</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="text-[#5c6bc0] px-2 py-1 rounded-md border border-[#5c6bc0]">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

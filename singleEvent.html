@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/d8ca3bfef7.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="text-[15px] h-full bg-[#f6f6f6] overflow-x-hidden">
+    <!-- navbar -->
+    <div class="fixed top-0 z-20 flex w-full text-white bg-black">
+        <nav class="flex items-center w-full px-10 py-4 justify-evenly">
+            <div class="flex items-center w-full gap-x-5">
+                <div class="py-1 text-xl font-bold">
+                    DevMate
+                </div>
+                <div class="hidden md:flex">
+                    <input type="text"
+                        class="outline-none border border-black rounded-xl text-[16px] px-2 py-1 text-black"
+                        placeholder="Search..">
+                </div>
+            </div>
+
+            <div class="flex gap-x-10">
+                <div>
+                    <i class="text-xl fa-solid fa-bell"></i>
+                </div>
+                <div class="relative">
+                    <i class="hidden text-xl md:block fa-solid fa-circle-user"></i>
+                    <i class="text-xl md:hidden fa-solid fa-gear" onclick="showPopup()"></i>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="hidden right-5 top-20 bg-[#00000057] backdrop-blur px-5 py-3 rounded-md z-20" id="popup">
+        <div class="flex flex-col gap-y-2">
+            <div class="px-2 py-1 text-white rounded-md cursor-pointer hover:bg-[#ffffff60]">Edit Profile</div>
+            <div class="px-2 py-1 text-white rounded-md cursor-pointer hover:bg-[#ffffff60]">Saved</div>
+            <div class="px-2 py-1 text-white rounded-md cursor-pointer hover:bg-[#ffffff60]">Dark Theme</div>
+        </div>
+    </div>
+
+
+    <!-- phone navbar -->
+    <div class="fixed bottom-0 w-full py-2 bg-[#00000057] backdrop-blur lg:hidden z-10">
+        <div class="flex justify-around">
+            <div><i class="text-xl fa-solid fa-house"></i></div>
+            <div><i class="text-xl fa-regular fa-compass"></i></div>
+            <div><i class="text-xl fa-solid fa-house"></i></div>
+            <div><i class="text-xl fa-regular fa-circle-user"></i></div>
+        </div>
+    </div>
+
+    <div class="mt-20 w-full pb-20 flex flex-col gap-y-10">
+        <button
+            class="w-fit transition border-black hover:bg-white border hover:border-black hover:text-black ml-3 mt-1 bg-black text-white flex items-center gap-x-2 px-3 py-1 rounded"><i
+                class="fa-solid fa-arrow-left"></i> <span class="hidden md:block">Back</span></button>
+        <!-- <div class="flex gap-x-5 flex-col md:flex-row gap-y-10">
+            <div class="bg-white p-5 rounded-lg w-full md:w-3/5 flex flex-col gap-y-5">
+                <div class="flex items-center gap-x-5">
+                    <div>
+                        <img src="profile.webp" alt="" class="w-14 h-14 rounded-full">
+                    </div>
+                    <div class="flex flex-col gap-y-2">
+                        <div><span>Issued by</span> <span>@night_owl</span></div>
+                        <div class="text-[#686868]">1 NOV 2024</div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-y-5">
+                    <div class="flex flex-col justify-between items gap-x-2">
+                        <div class="font-bold text-3xl">Advanced 3D modelling in blender</div>
+                        <div class="flex gap-x-3">
+                            <i class="text-2xl cursor-pointer fa-solid fa-globe"></i>
+                            <i class="text-2xl cursor-pointer fa-brands fa-github"></i>
+                        </div>
+                    </div>
+                    <div class="text-justify break-words">
+                        quisquam! Deleniti dignissimos nesciunt ipsa nostrum iste tempora dicta, voluptas odit eius vero
+                        voluptatem debitis ab consequatur fugiat maxime!
+                        Dolore perspiciatis tempora error cupiditate corrupti maxime ullam, velit animi voluptas
+                        provident aut! Non voluptatem, molestias voluptates doloremque autem, possimus mollitia atque
+                        assumenda minus natus deserunt excepturi voluptas, necessitatibus eligendi.
+                        Quisquam qui quos doloribus voluptas et autem magni consectetur architecto repellat, totam
+                        cupiditate rem explicabo? Voluptate alias inventore possimus eum nam ducimus neque perspiciatis
+                        soluta velit? Totam esse iste a!
+                        Voluptates quae ipsam, consectetur in tempora dolor corrupti tempore reprehenderit quis
+                        assumenda repellat totam beatae odio eligendi omnis hic! Voluptate ad aliquam dolorem nulla rem
+                        praesentium non facere distinctio ullam?
+                        Necessitatibus ullam animi excepturi nam minima nobis fugit, autem earum nostrum, nisi tenetur
+                        molestias aliquid, numquam itaque blanditiis mollitia cumque quidem commodi natus vel. Sit
+                        distinctio nostrum officiis sapiente architecto?
+                    </div>
+                    <div class="flex flex-col gap-y-5">
+                        <button class="font-bold underline self-start">See more</button>
+                        <div class="flex gap-x-5 b-[#6feb85] py-2 rounded-md">
+                            <button
+                                class="bg-[#6feb8627] border border-[#6feb85] rounded-md text-[#6feb85] px-3 py-1 hover:bg-[#6feb85] hover:text-black transition">Docs</button>
+                            <button
+                                class="bg-[#6feb8627] border border-[#6feb85] rounded-md text-[#6feb85] px-3 py-1 hover:bg-[#6feb85] hover:text-black transition">Video</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full md:w-2/5 flex flex-col gap-y-5 items-start ">
+                <div class="flex flex-col gap-y-4 bg-white p-5 rounded-lg relative">
+                    <div
+                        class="absolute right-2 -top-5 text-2xl font-extrabold text-center bg-[#0000002a] self-center px-3 py-1 rounded-md">
+                        $ 49.44 USD</div>
+                    <div class="text-2xl font-extrabold self-start mt-6">Author Information</div>
+                    <div class="flex flex-col gap-y-4">
+                        <div class="flex justify-between items-center gap-x-5">
+                            <div class=""><i class="fa-regular fa-user"></i> Author Name</div>
+                            <div class="flex gap-x-5">
+                                <i class="text-2xl cursor-pointer fa-brands fa-linkedin"></i>
+                                <i class="text-2xl cursor-pointer fa-brands fa-github"></i>
+                            </div>
+                        </div>
+                        <div><i class="fa-regular fa-envelope"></i> sampleemail@google.com</div>
+                        <div><i class="fa-solid fa-phone"></i> 7584739830</div>
+                        <div><i class="fa-solid fa-map-marker-alt"></i> 123, Lorem Ipsum, Dolor Sit, Amet</div>
+                    </div>
+
+                    <div><span class="font-bold">20</span> <span>Registered</span></div>
+
+                    <div class="flex gap-x-2 bg-[#6feb8627] px-3 py-2">
+                        <div class="w-5 bg-[#6feb85]"></div>
+                        <div><span class="font-bold">Note :</span> loreLut aperiam saepe mollitia quia harum numquam
+                            asperiores iure soluta at, esse vitae culpa quidem in corporis molestias maxime provident
+                            quas totam eveniet.</div>
+                    </div>
+
+                    <div class="flex items-center justify-center gap-x-5">
+                        <button
+                            class="px-4 py-2 bg-black text-white border border-black rounded-full transition hover:scale-110">Join</button>
+                        <button
+                            class="px-4 py-2 bg-white text-black border border-black rounded-full transition hover:scale-110">Save</button>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-full">
+                    <div>
+                        <fieldset class="border border-[#0000002d] rounded-md p-3 flex flex-col gap-y-3 bg-white">
+                            <legend class="px-2 text-[#686868] text-md">Skills and Expertise</legend>
+                            <div class="text-2xl font-extrabold self-start">Domain: Cybersecurity</div>
+                            <div class="self-start">
+                                <div class="border border-black px-3 py-1 rounded">Type: Advanced</div>
+                            </div>
+                            <div class="flex flex-col gap-y-2 rounded-md">
+                                <div>Skills Needed</div>
+                                <div class="flex gap-x-3 flex-wrap gap-y-2">
+                                    <div
+                                        class="bg-[#6feb8627] w-fit px-3 border border-[#6feb85] rounded py-1 backdrop-blur text-black">
+                                        Django</div>
+                                    <div
+                                        class="bg-[#6feb8627] w-fit px-3 border border-[#6feb85] rounded py-1 backdrop-blur text-black">
+                                        Django</div>
+                                    <div
+                                        class="bg-[#6feb8627] w-fit px-3 border border-[#6feb85] rounded py-1 backdrop-blur text-black">
+                                        Django</div>
+                                    <div
+                                        class="bg-[#6feb8627] w-fit px-3 border border-[#6feb85] rounded py-1 backdrop-blur text-black">
+                                        Django</div>
+                                    <div
+                                        class="bg-[#6feb8627] w-fit px-3 border border-[#6feb85] rounded py-1 backdrop-blur text-black">
+                                        Django</div>
+                                    <div
+                                        class="bg-[#6feb8627] w-fit px-3 border border-[#6feb85] rounded py-1 backdrop-blur text-black">
+                                        Django</div>
+                                </div>
+                            </div>
+                            <div>
+
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="flex flex-col gap-y-10">
+            <!-- add events section here -->
+            <div class="flex flex-col md:mx-10 mx-4 lg:flex-row gap-y-5 gap-x-5 min-[1300px]:mx-32 items-start">
+                <div class="lg:w-[70%]">
+                    <div class="flex  gap-x-5  bg-white p-5">
+                        <div class="w-2 bg-black -ml-2"></div>
+                        <div class="flex flex-col gap-y-3">
+                            <div>
+                                <img src="singleProject.png"
+                                    alt="">
+                            </div>
+                            <div class="flex flex-col gap-y-3">
+                                <div class="flex gap-x-3 items-center">
+                                    <img src="event.svg" alt="" class="w-7 h-7">
+                                    <h1>Encore Indian (Hindi Solo Singing) [event name]</h1>
+                                </div>
+                                <div class="flex gap-x-3 items-center">
+                                    <img src="description.svg" alt="" class="w-7 h-7">
+                                    <p>Indraprastha Institute of Information Technology (IIIT), Delhi [event
+                                        description]
+                                    </p>
+                                </div>
+                                <div class="flex gap-x-3 items-center">
+                                    <img src="category.svg" alt="" class="w-7 h-7">
+                                    <p>Tech, Business, E-commerce
+                                    </p>
+                                </div>
+                                <div class="flex gap-x-3 items-center">
+                                    <img src="mode.svg" alt="" class="w-7 h-7">
+                                    <p>Mode: Offline
+                                    </p>
+                                </div>
+                                <div class="flex gap-x-3 items-center">
+                                    <img src="location_icon.svg" alt="" class="w-7 h-7">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum corporis esse
+                                        eos!
+                                        o soluta omnis est esse asperiores quas magnam et voluptatibus sint, autem at
+                                        laborum consequatur? Quod sed, laborum porro sunt explicabo maxime eius
+                                        voluptatem.
+                                    </p>
+                                </div>
+                                <div class="flex gap-x-3 items-center">
+                                    <img src="prize.svg" alt="" class="w-7 h-7">
+                                    <p>Cash Prize of 500000
+                                    </p>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <a href=""
+                                        class="flex flex-col items-center w-fit px-3 py-1 rounded border border-black">More
+                                        Info on site</a>
+                                    <div class="flex flex-col items-center w-fit px-3 py-1 rounded border border-black">
+                                        18 Feb 2025
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full mt-10">
+                        <div class="flex flex-col gap-y-3 bg-white p-3">
+                            <div class="font-bold text-2xl">Information</div>
+                            <div>
+                                All that you need to know about Encore Indian (Hindi Solo Singing)
+                                About: Discover the magic of 'Encore Indian' – a captivating Hindi solo singing event.
+                                Join us
+                                for
+                                an unforgettable
+                                showcase of soulful melodies, timeless classics, and mesmerizing performances. Let the
+                                music
+                                weave
+                                its spell as 'Encore
+                                Indian' unfolds the beauty of Indian tunes, creating a memorable experience for all!
+
+                                Team Size: Solo
+
+                                Rounds: Online Prelims, Finals
+
+                                Judging Criteria: Accuracy of notes, Rhythm, Voice Modulation/'Murki'/'Harkat', Emotion
+                                and
+                                Overall
+                                Impact of the
+                                performance
+
+                                Online Prelims:
+
+                                Time Limit: 2 minutes
+                                The participant should record a video of any song of his/her choice. The chosen song
+                                should
+                                abide by
+                                the competition
+                                guidelines.
+                                No backing tracks or instruments are allowed for the online round.
+                                During registration, participants must submit the Google Drive link to their video. Keep
+                                the
+                                access
+                                "Open To All".
+                                Registration Deadline: 28th February, 2025
+                                This round is free for participation.
+                                Finals:
+
+                                Time Limit: 5 minutes
+                                Date of event: TBA
+                                This round will be held live at the organizing institute IIIT Delhi.
+                                For backing tracks/instruments, participants are allowed to choose from only one of the
+                                following
+                                options:
+                                The participant may play an instrument him/herself.
+                                The participant may use one accompanist.
+                                The participant may sing over a karaoke track.
+                                More information will be given to the shortlisted participants after the prelims.
+                                Finalists shall be required to pay a small commitment fee of Rs 50.
+                                Rules:
+
+                                Songs must be in Hindi
+                                Songs must not be purely classical (although classical portions are permissible)
+                                Songs must not include any rap portions.
+                                Participants disobeying the time limit will be penalized.
+                                The accompanist must be from the participant's own college (only applicable for the
+                                Finals).
+                                The decision of the judge(s) shall be final and binding.
+                                Note: In case of any disputes, the decision of Odyssey IIITD would be final.
+
+                                For any queries, feel free to contact the organizers!
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="lg:w-[30%] flex flex-col gap-y-5 w-full sticky top-20">
+                    <!-- <div class="flex justify-between items-center">
+                        <a href="" class="bg-[#00000034] w-fit px-3 py-1 rounded ">More Info on site</a>
+                        <div class="flex flex-col items-center w-fit px-3 py-1 rounded border border-black">
+                            18 Feb 2025
+                        </div>
+                    </div> -->
+                    <div class="flex flex-col gap-y-5 bg-white px-3 py-5">
+                        <h1 class="text-2xl bg-[#00000034] rounded text-center px-5 py-1 w-fit mx-auto">Organized
+                            By</h1>
+                        <hr>
+                        <div class="flex gap-x-3">
+                            <div class="bg-white w-full">
+                                <div class="flex gap-x-3 justify-between items-end w-full py-4 rounded-md">
+                                    <div class="flex gap-x-3 items-start">
+                                        <img src="profile.webp" class="w-14 h-14 rounded-md">
+                                        <div class="flex flex-col gap-y-1">
+                                            <a class="underline font-bold">Asymmetric Technical</a>
+                                            <p class="text-[#686868]">Software Development</p>
+                                            <p class="text-[#686868]">Industry</p>
+                                            <div class="flex gap-x-3">
+                                                <a href=""><img src="web.svg" alt="" class="w-7 h-7"></a>
+                                                <a href=""><img src="linkedin.svg" alt="" class="w-7 h-7"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-y-3 bg-white p-5">
+                        <div class="flex flex-col gap-y-5">
+                            <h1
+                                class="text-2xl text-center bg text- px-5 py-1 w-fit mx-auto bg-[#00000034] rounded">
+                                Contact the organizers</h1>
+                            <hr class="border-[#d4d4d4]">
+                            <div class="flex gap-x-2">
+                                <div class="bg-white border border-black w-1"></div>
+                                <div class="flex gap-x-3">
+                                    <div><img src="user.svg" alt="" class="h-10 w-10"></div>
+                                    <div class="flex flex-col gap-y-1">
+                                        <h1>Tanish Bachhas</h1>
+                                        <a href="mailto:tanish23545@iiitd.ac.in"
+                                            class="text-[#686868] break-all">tanish23545@iiitd.ac.in</a>
+                                        <a href="tel:9355191414" class="text-[#686868]">9355191414</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-x-2">
+                                <div class="bg-white border border-black w-1"></div>
+                                <div class="flex gap-x-3">
+                                    <div><img src="user.svg" alt="" class="h-10 w-10"></div>
+                                    <div class="flex flex-col gap-y-1">
+                                        <h1>Tanish Bachhas</h1>
+                                        <a href="mailto:tanish23545@iiitd.ac.in"
+                                            class="text-[#686868] break-all">tanish23545@iiitd.ac.in</a>
+                                        <a href="tel:9355191414" class="text-[#686868]">9355191414</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-x-3 flex-wrap gap-y-2">
+                                <a href="" class="bg-[#6feb85] px-5 py-1 rounded">Websites</a>
+                                <a href="" class="bg-[#6feb85] px-5 py-1 rounded">Links</a>
+                            </div>
+                            <div class="self-center mt-3">
+                                <button
+                                    class="border border-black rounded px-5 py-1 hover:bg-black hover:text-white transition">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- stages timeline section -->
+
+
+
+            <!-- comments section  -->
+            <div class=" m-auto md:w-[90%] lg:w-[900px] flex flex-col gap-y-5 p-3">
+                <!-- text area and submit btn -->
+                <div class="flex flex-col gap-y-3">
+                    <form class="flex flex-col gap-y-3">
+                        <textarea name="" id="commentTextArea"
+                            class="h-44 outline-none p-2 border-dashed border-[#0000002c] border-2 rounded-md"
+                            placeholder="Comment...."></textarea>
+                        <button type="submit" class="self-end bg-black text-white px-5 py-1 rounded">Submit</button>
+                    </form>
+                </div>
+
+                <!-- all comments section -->
+                <div class="flex flex-col gap-y-10 bg-white px-3 py-10 rounded-md">
+                    <div class="text-2xl">Comments <span class="text-[#686868]">3</span></div>
+
+                    <!-- single comment -->
+                    <div class="flex flex-col gap-y-8">
+                        <!-- question -->
+                        <div class="bg-[#0000002d] w-[95%] md:w-3/4 px-3 py-2 rounded-md">
+                            <div class="flex gap-x-2 items-center">
+                                <img src="profile.webp" alt="" class="w-12 h-12 rounded-full">
+                                <p class="font-bold">Abinav kishore</p>
+                                <p class="text-[#686868]">31 Jan 2025</p>
+                            </div>
+                            <div class="flex items-end justify-between gap-x-3 relative pb-5">
+                                <div class="text-justify ">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid saepe distinctio
+                                    maiores,
+                                    magni, repellendus modi itaque possimus rerum dolor nam numquam repudiandae soluta
+                                    optio
+                                    nostrum
+                                    temporibus nemo doloribus consectetur recusandae?
+                                </div>
+                                <a href="#commentTextArea"
+                                    class="absolute right-5 -bottom-5 bg-black text-white px-5 py-1 rounded"
+                                    onclick="handleReply('Abinav')">Reply</a>
+                            </div>
+                        </div>
+                        <!-- question end -->
+
+                        <!-- reply section -->
+                        <div class="flex gap-x-2">
+                            <div class="bg-black w-2 ml-5 rounded-full"></div>
+                            <!-- single reply -->
+                            <div class="flex flex-col gap-y-3 ml-auto w-full">
+                                <div
+                                    class="ml-auto max-w-[95%] md:max-w-[75%] bg-[#f6f6f6] px-3 py-2 rounded-md flex flex-col gap-y-3">
+                                    <div class="flex gap-x-2 items-center">
+                                        <img src="profile.webp" alt="" class="w-12 h-12 rounded-full">
+                                        <p class="font-bold">Abinav kishore</p>
+                                    </div>
+                                    <div class="text-justify">
+                                        eum.
+                                    </div>
+                                    <p class="text-[#686868] text-right w-full">31 Jan 2025</p>
+                                </div>
+
+
+
+                                <div
+                                    class="ml-auto max-w-[95%] md:max-w-[75%] bg-[#f6f6f6] px-3 py-2 rounded-md flex flex-col gap-y-3">
+                                    <div class="flex gap-x-2 items-center">
+                                        <img src="profile.webp" alt="" class="w-12 h-12 rounded-full">
+                                        <p class="font-bold">Abinav kishore</p>
+                                    </div>
+                                    <div class="text-justify">
+                                        lorem
+                                    </div>
+                                    <p class="text-[#686868] text-right w-full">31 Jan 2025</p>
+                                </div>
+                            </div>
+                            <!-- single reply end -->
+                        </div>
+                    </div>
+
+                    <button
+                        class="bg-black px-3 py-1 text-white rounded-md hover:bg-[#00000067] hover:text-black w-fit self-center">See
+                        all comments</button>
+                </div>
+            </div>
+
+
+        </div>
+        <script src="script.js"></script>
+</body>
+
+</html>
