@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/d8ca3bfef7.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+
 </head>
 
 <body class="text-[15px] h-full bg-[#f6f6f6] overflow-x-hidden">
@@ -96,20 +98,13 @@
                             class="w-full px-3 py-1 outline-none border border-black" placeholder="Repository Link">
                     </div>
                     <div class="flex flex-col gap-y-3">
-                        <label for="projectSkills">Skills Needed</label>
-                        <div class="gap-x-2 hidden" id="skillsContainer">
-                        </div>
-                        <input type="text" name="projectSkills" id="projectSkills"
-                            class="w-full px-3 py-1 outline-none border border-black" list="skills"
-                            placeholder="Skills Required" onkeydown="addSkills(event)" autocomplete="off">
-                        <datalist id="skills">
-                            <option value="React">
-                            <option value="Django">
-                            <option value="Node">
-                            <option value="express">
-                            <option value="vuw">
-                            <option value="Ajax">
-                        </datalist>
+                        <h2 class="">Required Skills</h2>
+                        <select id="mySelect" class="px-3 py-1 outline-none border border-black" style="width: 100%; border: 1px solid black;" multiple>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="Python">Python</option>
+                            <option value="React">React</option>
+                            <option value="Node.js">Node.js</option>
+                        </select>
                     </div>
                     <div class="flex gap-x-3">
                         <div class="flex flex-col gap-y-3 w-full">
@@ -143,7 +138,7 @@
                         </label>
                         <label class="flex flex-col gap-y-3 w-full">
                             <label for="projectVideo">Video</label>
-                            <input type="file" name="projectVideo" id="projectVideo" class="hidden"
+                            <input type="file" accept="video/*" name="projectVideo" id="projectVideo" class="hidden"
                                 onchange="uploadVideo()">
                             <div class="flex gap-x-2 items-center border-dashed border-2 border-black px-3 py-1 cursor-pointer"
                                 id="uploadVideo">
@@ -161,6 +156,14 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script>
+        $('#mySelect').select2({
+            placeholder: "Select Required Skills",
+            allowClear: true
+        });
+    </script>
 </body>
 
 </html>

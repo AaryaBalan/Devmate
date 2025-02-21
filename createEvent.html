@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/d8ca3bfef7.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
 </head>
 
 <body class="text-[15px] h-full bg-[#f6f6f6] overflow-x-hidden">
@@ -127,28 +128,57 @@
                         <input type="text" name="eventOrganizedBy" id="eventOrganizedBy"
                             class="w-full px-3 py-1 outline-none border border-black" placeholder="Organized by">
                     </div>
-
-
-                    <div class="w-96 bg-white p-4 rounded-lg shadow-lg">
-                        <h2 class="text-lg font-semibold mb-2">Select an Option</h2>
-
-                        <!-- Pillbox Container -->
-                        <div id="pillbox" class="flex flex-wrap gap-2 p-2 border border-gray-300 rounded">
-                            <!-- Pills will be added here dynamically -->
+                    <h1 class="font-bold self-center mt-5 text-xl">Details of the organizers</h1>
+                    <div class="flex flex-col gap-y-3">
+                        <label for="eventOrganizerName">Organizer Name</label>
+                        <input type="text" name="eventOrganizerName" id="eventOrganizerName"
+                            class="w-full px-3 py-1 outline-none border border-black" placeholder="Organizer Name">
+                    </div>
+                    <div class="flex gap-x-3">
+                        <div class="flex flex-col gap-y-3 w-full">
+                            <label for="organizerEmail">Organizer Email</label>
+                            <input type="text" name="organizerEmail" id="organizerEmail"
+                                class="w-full px-3 py-1 outline-none border border-black" placeholder="Organizer Email">
                         </div>
+                        <div class="flex flex-col gap-y-3 w-full">
+                            <label for="organizerPhone">Organizer Phone</label>
+                            <input type="text" name="organizerPhone" id="organizerPhone"
+                                class="w-full px-3 py-1 outline-none border border-black" placeholder="Organizer Phone">
+                        </div>
+                    </div>
+                    <button type="button" class="self-end border bg-black text-white px-3 py-1" id="addOrganizerBtn" onclick="showOtherOrganizer()">Add Another</button>
+                    <div class="flex-col gap-y-3 hidden" id="anotherOrganizer">
+                        <div class="flex flex-col gap-y-3">
+                            <label for="eventOrganizerName2">Organizer Name</label>
+                            <input type="text" name="eventOrganizerName2" id="eventOrganizerName2"
+                                class="w-full px-3 py-1 outline-none border border-black" placeholder="Organizer Name">
+                        </div>
+                        <div class="flex gap-x-3">
+                            <div class="flex flex-col gap-y-3 w-full">
+                                <label for="organizerEmail2">Organizer Email</label>
+                                <input type="text" name="organizerEmail2" id="organizerEmail2"
+                                    class="w-full px-3 py-1 outline-none border border-black" placeholder="Organizer Email">
+                            </div>
+                            <div class="flex flex-col gap-y-3 w-full">
+                                <label for="organizerPhone2">Organizer Phone</label>
+                                <input type="text" name="organizerPhone2" id="organizerPhone2"
+                                    class="w-full px-3 py-1 outline-none border border-black" placeholder="Organizer Phone">
+                            </div>
+                        </div>
+                    </div>
 
-                        <!-- Dropdown Selection -->
-                        <select id="pillSelect" class="mt-2 w-full p-2 border rounded">
-                            <option value="" disabled selected>Select an option</option>
+
+                    <!-- <div class="w-full ">
+                        <h2 class="text-lg font-semibold mb-2">Select an Option</h2>
+                        <select id="mySelect" class="w-full px-3 py-1 outline-none border border-black" multiple>
                             <option value="JavaScript">JavaScript</option>
                             <option value="Python">Python</option>
                             <option value="React">React</option>
                             <option value="Node.js">Node.js</option>
-                            <option value="Tailwind CSS">Tailwind CSS</option>
                         </select>
-                    </div>
+                    </div> -->
 
-                    
+
                     <div class="self-center">
                         <button class="bg-[#6feb85] px-3 py-1 rounded-lg" type="submit">Save</button>
                     </div>
@@ -158,6 +188,12 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="createEvent.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script>
+        
+    </script>
 </body>
 
 </html>

@@ -143,3 +143,10 @@ const notTillNowEducation = () => {
 
 
 
+function openAddSkill() {
+    const addSkillBtn = document.getElementById('addSkillBtn')
+    const addSkillContainer = document.getElementById('addSkillContainer')
+    addSkillBtn.classList.toggle('rotate-45')
+    addSkillContainer.classList.toggle('hidden')
+    addSkillContainer.classList.toggle('flex')
+}

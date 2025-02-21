@@ -125,19 +125,51 @@ function getExplore() {
 
 
 // pillbox
-const select = document.getElementById("pillSelect");
+const predefinedOptions = ["JavaScript", "Python", "React", "Node.js", "Tailwind CSS", "Vue.js", "Django", "Flask", "Express.js"];
+const selectedPills = new Set();
+const input = document.getElementById("pillInput");
 const pillbox = document.getElementById("pillbox");
-const selectedPills = new Set(); // To prevent duplicates
+const suggestionsContainer = document.getElementById("suggestions");
 
-select.addEventListener("change", function () {
-    const selectedValue = select.value;
-    if (selectedValue && !selectedPills.has(selectedValue)) {
-        selectedPills.add(selectedValue);
-        createPill(selectedValue);
+// Show suggestions as user types
+input.addEventListener("input", function () {
+    const query = input.value.toLowerCase();
+    suggestionsContainer.innerHTML = "";
+
+    if (!query) {
+        suggestionsContainer.classList.add("hidden");
+        return;
     }
-    select.value = ""; // Reset dropdown
+
+    const filteredOptions = predefinedOptions.filter(option => option.toLowerCase().includes(query) && !selectedPills.has(option));
+
+    if (filteredOptions.length === 0) {
+        suggestionsContainer.classList.add("hidden");
+        return;
+    }
+
+    suggestionsContainer.classList.remove("hidden");
+
+    filteredOptions.forEach(option => {
+        const div = document.createElement("div");
+        div.textContent = option;
+        div.className = "p-2 cursor-pointer hover:bg-gray-200";
+        div.onclick = () => selectOption(option);
+        suggestionsContainer.appendChild(div);
+    });
 });
 
+// Handle option selection
+function selectOption(text) {
+    if (!selectedPills.has(text)) {
+        selectedPills.add(text);
+        createPill(text);
+    }
+    input.value = "";
+    suggestionsContainer.classList.add("hidden");
+}
+
+// Create pill element
 function createPill(text) {
     const pill = document.createElement("div");
     pill.className = "flex items-center bg-blue-500 text-white px-3 py-1 rounded-full";
@@ -157,6 +189,23 @@ function createPill(text) {
     pill.appendChild(closeBtn);
     pillbox.appendChild(pill);
 }
+
+// Allow selection with Enter key
+input.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById('pillbox').classList.remove('hidden')
+        const firstSuggestion = suggestionsContainer.querySelector("div");
+        if (firstSuggestion) selectOption(firstSuggestion.textContent);
+    }
+});
+
+// Hide suggestions when clicking outside
+document.addEventListener("click", function (event) {
+    if (!event.target.closest("#suggestions") && event.target !== input) {
+        suggestionsContainer.classList.add("hidden");
+    }
+});
 
 
 
@@ -229,7 +278,10 @@ uploadPost.addEventListener('change', (event) => {
 })
 
 // opening create post div function
-const openPost = () => {
+function openPost() {
+    const postOption = document.getElementById('postOption')
+    postOption.classList.add('hidden')
+    postOption.classList.toggle('absolute')
     const entireSection = document.getElementById('entireSection')
     const createPost = document.getElementById('createPost')
     entireSection.classList.add('blur-md')
@@ -238,10 +290,15 @@ const openPost = () => {
 }
 
 // closing create post div function
-const closePost = () => {
+function closePost() {
     const entireSection = document.getElementById('entireSection')
     const createPost = document.getElementById('createPost')
     entireSection.classList.remove('blur-md')
     createPost.classList.add('hidden')
-    createPost.classList.remove('flex')
 }
+
+
+$('#mySelect').select2({
+    placeholder: "Select multiple options",
+    allowClear: true
+});
