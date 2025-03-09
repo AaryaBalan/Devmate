@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d8ca3bfef7.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.css"
+        integrity="sha512-087vysR/jM0N5cp13Vlp+ZF9wx6tKbvJLwPO8Iit6J7R+n7uIMMjg37dEgexOshDmDITHYY5useeSmfD1MYiQA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js"
+        integrity="sha512-JyCZjCOZoyeQZSd5+YEAcFgz2fowJ1F1hyJOXgtKu4llIa0KneLcidn5bwfutiehUTiOuK87A986BZJMko0eWQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body class="text-[15px] h-full bg-[#f6f6f6] overflow-x-hidden">
+    <!-- navbar -->
+    <div class="fixed z-20 top-0 flex w-full text-white bg-black">
+        <nav class="flex items-center w-full px-10 py-4 justify-evenly">
+            <div class="flex items-center w-full gap-x-5">
+                <div class="py-1 text-xl font-bold">
+                    DevMate
+                </div>
+                <div class="hidden md:flex">
+                    <input type="text"
+                        class="outline-none border border-black rounded-xl text-[16px] px-2 py-1 text-black"
+                        placeholder="Search..">
+                </div>
+            </div>
+
+            <div class="flex gap-x-10">
+                <div>
+                    <i class="text-xl fa-solid fa-bell"></i>
+                </div>
+                <div>
+                    <i class="text-xl fa-solid fa-square-plus" onclick="showPostOption()"></i>
+                </div>
+                <div class="relative">
+                    <i class="hidden text-xl md:block fa-solid fa-circle-user"></i>
+                    <i class="text-xl md:hidden fa-solid fa-gear" onclick="showPopup()"></i>
+                </div>
+            </div>
+        </nav>
+        <div class="hidden top-20 right-10 bg-[#00000057] backdrop-blur px-5 py-3 rounded-md" id="postOption">
+            <div class="flex flex-col gap-y-1">
+                <div class="px-2 py-1 text-white rounded-md cursor-pointer hover:bg-black hover:text-white font-bold transition"
+                    onclick="openPost()">Upload Post</div>
+                <div
+                    class="px-2 py-1 text-white rounded-md cursor-pointer hover:bg-black hover:text-white font-bold transition">
+                    Upload Project</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- popup -->
+    <div class="hidden right-5 top-20 bg-[#00000057] backdrop-blur px-5 py-3 rounded-md z-20" id="popup">
+        <div class="flex flex-col gap-y-2">
+            <div class="px-2 py-1 text-white rounded-md cursor-pointer hover:bg-[#ffffff60]">Edit Profile</div>
+            <div class="px-2 py-1 text-white rounded-md cursor-pointer hover:bg-[#ffffff60]">Saved</div>
+            <div class="px-2 py-1 text-white rounded-md cursor-pointer hover:bg-[#ffffff60]">Dark Theme</div>
+        </div>
+    </div>
+
+    <!-- phone navbar -->
+    <div class="z-10 fixed bottom-0 w-full py-2 bg-[#00000057] backdrop-blur lg:hidden">
+        <div class="flex justify-around">
+            <div><i class="text-xl fa-solid fa-house"></i></div>
+            <div><i class="text-xl fa-regular fa-compass"></i></div>
+            <div><i class="text-xl fa-solid fa-house"></i></div>
+            <div><i class="text-xl fa-regular fa-circle-user"></i></div>
+        </div>
+    </div>
+
+    <!-- main section -->
+    <div id="entireSection" class="flex flex-col lg:flex-row pt-20 pb-16 lg:pb-0 w-full">
+        <!-- sidenav -->
+        <div
+            class="text-black hidden w-1/5 flex-col justify-between h-[calc(100vh-57px)] sticky top-16 -mt-4 py-7 bg-white shadow-lg md:hidden lg:flex">
+            <div class="flex px-10">
+                <div class="flex flex-col justify-center py-3 gap-y-3 w-full">
+                    <div class="text-lg"><i class="fa-solid fa-house"></i> Home</div>
+                    <div class="text-lg"><i class="fa-solid fa-house"></i> Explore</div>
+                    <div class="text-lg"><i class="fa-solid fa-house"></i> Home</div>
+                    <div
+                        class="px-5 py-1 -ml-5 text-lg text-black font-semibold bg-[#0000002a] rounded-xl w-[calc(100%+1.25rem)]">
+                        <i class="fa-solid fa-house"></i> Profile
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col justify-between items-center gap-y-5 px-10">
+                <div
+                    class="px-3 text-center py-1 -ml-5 text-lg text-black font-semibold rounded border border-black w-[calc(100%+1.25rem)]">
+                    <i class="fa-solid fa-house"></i> My Organizations
+                </div>
+                <div class="flex justify-around w-full">
+                    <div><i class="text-2xl fa-solid fa-calendar-days"></i></div>
+                    <div><i class="text-2xl fa-regular fa-bookmark"></i></div>
+                    <div><i class="text-2xl fa-solid fa-gear"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- middle section -->
+        <div class="w-full lg:w-4/5 px-4 lg:px-10 py-6 flex flex-col gap-8">
+            <div class="">
+                <h2 class="text-3xl font-bold mb-2">Calendar</h2>
+                <hr>
+                <div class="mt-10">
+                    <select name="selectCalender" id="selectCalender"
+                        class="px-3 py-1 border bg-[#0000003f] outline-none rounded md:w-auto cursor-pointer">
+                        <option value="All">All</option>
+                        <option value="Projects">Projects</option>
+                        <option value="Events">Events</option>
+                    </select>
+                </div>
+            </div>
+            <div class="space-y-10">
+                <div class="flex flex-col md:flex-row gap-4">
+                    <!-- <div class="bg-black text-white py-4 px-6 rounded-lg shrink-0 sticky top-0 md:static">29 FEB</div> -->
+                    <div class="bg-black text-white py-4 px-6 rounded-lg font-bold text-center md:static sticky top-20 z-[1]">
+                        29 FEB 2025
+                    </div>
+                    <div class="flex flex-col gap-6 md:w-5/6 p-5 md:p-0">
+                        <!-- Event Card 1 -->
+                        <div class="relative flex flex-col px-5 py-3 bg-white rounded-lg gap-y-4 w-full">
+                            <div class="flex flex-col md:flex-row items-start justify-between gap-4">
+                                <div class="flex items-start w-full gap-x-1">
+                                    <div class="flex flex-col gap-y-1.5 w-full">
+                                        <a href="https://v3.tailwindcss.com/docs/scroll-behavior"
+                                            class="font-bold text-[18px] cursor-pointer">Lorem</a>
+                                        <div class="text-sm md:text-base">Lorem ipsum dolor sit amet consectetur, Lorem
+                                            ipsum dolor sit amet consectetur adipisicing elit...</div>
+                                        <div
+                                            class="text-[#686868] flex flex-col md:flex-row justify-between mt-5 gap-2">
+                                            <div class="flex flex-col md:flex-row gap-1 md:items-center">
+                                                <span>Author</span>
+                                                <span class="hidden md:block">●</span>
+                                                <span>13 Applicants</span>
+                                            </div>
+                                            <p class="self-start md:self-end">28 Jan 2025</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="absolute right-3 top-2 flex items-start gap-x-5">
+                                    <i class="text-xl fa-solid fa-certificate"></i>
+                                    <i
+                                        class="text-xl fa-regular fa-bookmark hover:scale-[1.3] transition cursor-pointer"></i>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                                <div class="flex flex-wrap items-center gap-4">
+                                    <div><i class="text-2xl fa-brands fa-github cursor-pointer"></i></div>
+                                    <div class="underline">Django</div>
+                                    <div class="underline">React</div>
+                                </div>
+                                <div class="flex items-center gap-x-2 text-[#686868]">
+                                    <button
+                                        class="bg-[#6feb85] px-2 py-1 rounded-md text-white font-bold border border-[#6feb85] transition hover:scale-[1.2]">Join</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Event Card 2 -->
+                        <div class="relative flex flex-col px-5 py-3 bg-white rounded-lg gap-y-4 w-full">
+                            <div class="flex flex-col md:flex-row items-start justify-between gap-4">
+                                <div class="flex items-start w-full gap-x-1">
+                                    <div class="flex flex-col gap-y-1.5 w-full">
+                                        <a href="https://v3.tailwindcss.com/docs/scroll-behavior"
+                                            class="font-bold text-[18px] cursor-pointer">Lorem</a>
+                                        <div class="text-sm md:text-base">Lorem iptis lorem optio reprehenderit,
+                                            officiis earum inventore ea m</div>
+                                        <div
+                                            class="text-[#686868] flex flex-col md:flex-row justify-between mt-5 gap-2">
+                                            <div class="flex flex-col md:flex-row gap-1 md:items-center">
+                                                <span>Author</span>
+                                                <span class="hidden md:block">●</span>
+                                                <span>13 Applicants</span>
+                                            </div>
+                                            <p class="self-start md:self-end">28 Jan 2025</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="absolute right-3 top-2 flex items-start gap-x-5">
+                                    <i class="text-xl fa-solid fa-certificate"></i>
+                                    <i
+                                        class="text-xl fa-regular fa-bookmark hover:scale-[1.3] transition cursor-pointer"></i>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                                <div class="flex flex-wrap items-center gap-4">
+                                    <div><i class="text-2xl fa-brands fa-github cursor-pointer"></i></div>
+                                    <div class="underline">Django</div>
+                                    <div class="underline">React</div>
+                                </div>
+                                <div class="flex items-center gap-x-2 text-[#686868]">
+                                    <button
+                                        class="bg-[#6feb85] px-2 py-1 rounded-md text-white font-bold border border-[#6feb85] transition hover:scale-[1.2]">Join</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Card -->
+                        <div class="relative flex flex-col md:flex-row w-full gap-5 bg-white p-3 pb-4">
+                            
+                            <div class="max-[500px]:w-full w-96 aspect-video overflow-hidden bg-[#d4d4d4] relative border">
+                                <img src="thumbnail.png" alt="Post" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="flex flex-col gap-y-3 items-start w-full">
+                                <div class="flex justify-between pt-2 items-end">
+                                    <div class="flex flex-col gap-y-2 mt-2">
+                                        <div class="flex gap-x-2 items-start">
+                                            <img src="{% static 'assets/org_event.svg' %}" alt="" class="w-7 h-7">
+                                            <div class="font-bold">Event</div>
+                                        </div>
+                                        <div class="flex gap-x-2 items-start">
+                                            <img src="{% static 'assets/category.svg' %}" alt="" class="w-7 h-7">
+                                            <div class="text-[#686868]">lorem</div>
+                                        </div>
+                                        <div class="flex gap-x-2 items-start">
+                                            <img src="{% static 'assets/organization.svg' %}" alt="" class="w-7 h-7">
+                                            <div class="text-[#686868]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis omnis officiis porro ab illum in eum earum impedit quo, magni debitis nulla nobis similique, quos laudantium corporis! Corporis, velit error!</div>
+                                        </div>
+                                        <div class="flex gap-x-2 items-center">
+                                            <img src="{% static 'assets/calendar.svg' %}" alt="" class="w-7 h-7">
+                                            <p class='text-[#686868]'>Today</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='flex flex-row mt-1 justify-between w-full items-center'>
+                                    <a href='{% url "event_detail" event.id %}'
+                                        class="bg-black px-5 text-white py-1 rounded hover:bg-[#00000067] transition cursor-pointer text-center">
+                                        View
+                                    </a>
+                                    <div class="">
+                                        <i class="text-xl fa-regular fa-bookmark hover:scale-[1.3] transition cursor-pointer"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+    <!-- create post -->
+    <div class="hidden fixed items-center justify-center top-20 bottom-12 left-0 right-0" id="createPost">
+        <form
+            class="border rounded-md shadow-md relative flex flex-col gap-y-3 h-full overflow-y-scroll bg-white w-full md:w-3/4 lg:w-1/2">
+            <div class="relative flex flex-col gap-y-4 overflow-y-scroll items-center py-10 bg-white w-full">
+                <div class="cursor-pointer absolute top-5 right-5" onclick="closePost()">
+                    <i class="text-3xl fa-solid fa-circle-xmark"></i>
+                </div>
+                <h1 class="mt-5 w-fit self-center text-2xl font-bold bg-black text-white px-3 py-1 text-center rounded">
+                    Create Post</h1>
+                <div class="flex flex-col items-start gap-4 border p-4 w-full max-w-[34rem] mx-auto">
+                    <div class="aspect-video overflow-hidden w-full bg-[#f8fafd]" id="postImgContainer">
+                        <img src="" alt="Post Banner" class="hidden w-full h-full object-contain aspect-video"
+                            id="postImg">
+                        <div id="uploadPostContainer" class="flex justify-center items-center h-full">
+                            <label for="uploadPost">
+                                <div class="flex items-center justify-center flex-col h-full">
+                                    <img src="uploadPost.svg" alt="" class="aspect-video w-52">
+                                    <p>Upload the files here...</p>
+                                </div>
+                            </label>
+                            <input type="file" name="post" id="uploadPost" class="hidden">
+                        </div>
+                    </div>
+                    <label id="uploadPostLabel" for="uploadPost"
+                        class="hidden bg-[#00000054] text-white font-bold rounded-md px-3 py-1 hover:bg-black transition cursor-pointer">Upload
+                        another</label>
+                    <textarea class="text-gray-700 w-full h-36 outline-none resize-none"
+                        placeholder="Description..."></textarea>
+                    <div class="flex gap-x-2 self-end">
+                        <div class="cursor-pointer hover:bg-black hover:text-white focus:bg-black focus:text-white transition bg-white text-black border border-black px-3 py-1"
+                            onclick="setImgOriginal()" id="originalAspect">Original</div>
+                        <div class="cursor-pointer hover:bg-black hover:text-white focus:bg-black focus:text-white transition bg-white text-black border border-black px-3 py-1"
+                            onclick="resizePost(0)" id="squareAspect">1:1</div>
+                        <div class="cursor-pointer hover:bg-black hover:text-white focus:bg-black focus:text-white transition bg-white text-black border border-black px-3 py-1"
+                            onclick="resizePost(1)" id="videoAspect">16:9</div>
+                    </div>
+                </div>
+                <button type="submit" class="self-center"><button type="submit"
+                        class="bg-[#6feb85] text-black px-3 py-1">Post</button></button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="organizationProfile.js"></script>
+</body>
+
+</html>

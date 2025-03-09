@@ -14,6 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js"
         integrity="sha512-JyCZjCOZoyeQZSd5+YEAcFgz2fowJ1F1hyJOXgtKu4llIa0KneLcidn5bwfutiehUTiOuK87A986BZJMko0eWQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="banner.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
 
 </head>
@@ -107,11 +108,59 @@
             <div class="flex flex-col items-center gap-y-2">
                 <!-- z-10 md -->
                 <div class="w-full flex flex-col items-center md:gap-y-10 bg-white">
-                    <div class="relative   w-full h-32 bg-black md:h-64 dot-white">
-                        <div class="absolute -bottom-16 md:-bottom-20 left-[calc(50%-4rem)] bg-black rounded-lg">
-                            <img src="profile.webp" alt="" class="rounded-lg w-32 h-32 md:w-40 md:h-40"
-                                onclick="viewProfile()" id="originalProfile">
+
+                    <!-- banner -->
+                    <div class="developer-banner flex flex-col items-center justify-center mx-auto h-60 md:h-96">
+                        <div class="circuit-pattern"></div>
+                        <div class="pixel-burst top-[5%] left-[10%]"></div>
+                        <div class="pixel-burst bottom-[10%] right-[15%]"></div>
+                        <div class="pixel-burst top-[25%] right-[20%]"></div>
+                        <div class="code-snippet absolute top-[5%] left-[5%]">
+                            <div class="terminal-dot"></div>
+                            <div class="terminal-dot"></div>
+                            <div class="terminal-dot"></div>
+                            <span>git commit -m "Collab Mode: ON"</span>
                         </div>
+                        <div class="code-snippet absolute bottom-[5%] right-[5%]">
+                            <span>code . > success</span>
+                        </div>
+                        <div class="code-snippet absolute top-[15%] right-[10%]">
+                            <span>npm run dev</span>
+                        </div>
+                        <div class="binary-stream top-0 left-[5%] w-[10%]">0101 1001 1100 0011</div>
+                        <div class="binary-stream top-0 left-[20%] w-[10%]">1100 0011 0101 1001</div>
+                        <div class="binary-stream top-0 right-[20%] w-[10%]">1001 0101 1100 0011</div>
+                        <div class="dot-swarm top-[5%] left-[30%]">.....</div>
+                        <div class="dot-swarm bottom-[5%] left-[20%]">.....</div>
+                        <div class="dot-swarm top-[15%] right-[30%]">.....</div>
+                        <div class="dot-swarm bottom-[15%] right-[10%]">.....</div>
+                        <div class="glitch-line top-[25%]"></div>
+                        <div class="glitch-line bottom-[25%]"></div>
+                        <h1 class="glow-text text-2xl md:text-4xl sm:text-3xl z-10 text-center">Available for
+                            Collaboration</h1>
+                        <div class="slogan mt-4">Code’s Hot, Let’s Rock!</div>
+                        <div class="gear-icon absolute top-[5%] right-[5%]">
+                            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#6feb85"
+                                stroke-width="2">
+                                <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l-.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l-.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v-.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l-.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                            </svg>
+                        </div>
+                        <div class="terminal-icon absolute bottom-[5%] left-[5%]">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#6feb85"
+                                stroke-width="2">
+                                <rect x="2" y="3" width="20" height="18" rx="2" ry="2" />
+                                <path d="M6 7h12" />
+                                <path d="M6 11l4 4-4 4" />
+                                <path d="M12 11h6" />
+                            </svg>
+                        </div>
+                            <!-- profile pic inside banner -->
+                            <div class="absolute -bottom-16 md:-bottom-20 left-[calc(50%-4rem)] bg-black rounded-lg">
+                                <img src="profile.webp" alt="" class="rounded-lg w-32 h-32 md:w-40 md:h-40"
+                                    onclick="viewProfile()" id="originalProfile">
+                            </div>
                     </div>
                     <div
                         class="flex-col flex items-center justify-between mt-14 md:mt-10  pb-5 bg-white rounded-md md:ml-auto w-full gap-y-2">
@@ -330,7 +379,8 @@
         <div
             class="flex flex-col px-4 mt-10 lg:w-1/4 lg:flex-col lg:mt-28 gap-y-5 md:flex-row md:items-start md:w-full md:gap-x-5 md:mr-3">
             <div class="flex flex-col px-2 py-4 bg-white gap-y-3 md:w-1/2 lg:w-full relative">
-                <div class="cursor-pointer absolute top-4 right-4"><img src="plus-edit.svg" alt="" class="w-5 h-5" onclick="openAddSkill()" id="addSkillBtn">
+                <div class="cursor-pointer absolute top-4 right-4"><img src="plus-edit.svg" alt="" class="w-5 h-5"
+                        onclick="openAddSkill()" id="addSkillBtn">
                 </div>
                 <h1 class="text-xl font-bold text-center">Skills;</h1>
                 <form class="flex-col gap-y-3 p-3 hidden" id="addSkillContainer">
@@ -342,7 +392,8 @@
                         <option value="React">React</option>
                         <option value="Node.js">Node.js</option>
                     </select>
-                    <button type="submit" class="bg-black text-white px-5 py-1 w-fit self-center rounded hover:scale-105 transition-all">Done</button>
+                    <button type="submit"
+                        class="bg-black text-white px-5 py-1 w-fit self-center rounded hover:scale-105 transition-all">Done</button>
                 </form>
                 <div class="flex flex-col pl-3 gap-y-2">
                     <div class="flex flex-wrap gap-2">
