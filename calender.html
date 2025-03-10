@@ -8,12 +8,6 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/d8ca3bfef7.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.css"
-        integrity="sha512-087vysR/jM0N5cp13Vlp+ZF9wx6tKbvJLwPO8Iit6J7R+n7uIMMjg37dEgexOshDmDITHYY5useeSmfD1MYiQA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js"
-        integrity="sha512-JyCZjCOZoyeQZSd5+YEAcFgz2fowJ1F1hyJOXgtKu4llIa0KneLcidn5bwfutiehUTiOuK87A986BZJMko0eWQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body class="text-[15px] h-full bg-[#f6f6f6] overflow-x-hidden">
@@ -102,13 +96,23 @@
             <div class="">
                 <h2 class="text-3xl font-bold mb-2">Calendar</h2>
                 <hr>
-                <div class="mt-10">
-                    <select name="selectCalender" id="selectCalender"
-                        class="px-3 py-1 border bg-[#0000003f] outline-none rounded md:w-auto cursor-pointer">
-                        <option value="All">All</option>
-                        <option value="Projects">Projects</option>
-                        <option value="Events">Events</option>
-                    </select>
+                <div class="flex gap-x-1 flex-wrap gap-y-2 mt-8 relative">
+                    <div class="flex flex-col gap-y-2 items-center">
+                        <div class="flex gap-x-2 items-center bg-black text-white px-5 py-1">
+                            <div id="exploreTitle" onclick="getAgenda()" class="cursor-pointer">Projects</div>
+                            <img src="down.svg" alt="" class="w-7 h-7 cursor-pointer" onclick="getAgenda()">
+                        </div>
+                        <div class="hidden flex-col gap-y-1 bg-[#00000033] px-5 py-2 absolute top-12 left-0 z-10 backdrop-blur rounded"
+                            id="allAgenda">
+                            <a href="" class="hover:scale-110 transition-all hover:font-bold px-3 py-1 cursor-pointer">
+                                Projects</a>
+                            <a href=""
+                                class="hover:scale-110 transition-all hover:font-bold px-3 py-1 cursor-pointer">Events
+                            </a>
+                            <a href="" class="hover:scale-110 transition-all hover:font-bold px-3 py-1 cursor-pointer">
+                                Organizations</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="space-y-10">
@@ -313,7 +317,6 @@
     </div>
 
     <script src="script.js"></script>
-    <script src="organizationProfile.js"></script>
 </body>
 
 </html>

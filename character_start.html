@@ -14,7 +14,7 @@
 <body class="flex items-center justify-center min-h-screen bg-gray-100">
     <div class="w-full mx-auto flex items-center justify-center">
         <div class="bg-white p-8 rounded-lg shadow-lg w-full md:w-4/5 lg:w-[700px]">
-            <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">Tell us about yourself</h2>
+            <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">More about you</h2>
 
             <!-- Profile Image Section -->
             <!-- <div class="flex justify-center mb-6">
@@ -30,6 +30,21 @@
             </div> -->
 
             <form action="#" method="POST" class="space-y-6">
+
+                <!-- Availablity -->
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">
+                        <i class="fas fa-user mr-2"></i>Describe Yourself
+                    </label>
+                    <select
+                        class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+                        placeholder="About Yourself..." required>
+                        <option value="Open For Collaboration"></option>
+                        <option value="Open For Collaboration"></option>
+                    </select>
+                        
+                </div>
+
                 <!-- About Yourself -->
                 <div>
                     <label class="block text-gray-700 font-medium mb-2">
@@ -113,7 +128,7 @@
                 allowClear: true,
                 width: '100%'
             });
-            
+
         });
     </script>
 </body>

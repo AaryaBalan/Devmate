@@ -302,3 +302,11 @@ $('#mySelect').select2({
     placeholder: "Select multiple options",
     allowClear: true
 });
+
+//get agenda in calender.html
+function getAgenda() {
+    const allAgenda = document.getElementById('allAgenda')
+    console.log(this)
+    allAgenda.classList.toggle('flex')
+    allAgenda.classList.toggle('hidden')
+}
