@@ -12,7 +12,8 @@
 </head>
 
 <body class="flex items-center justify-center min-h-screen bg-gray-100">
-    <div class="w-full mx-auto flex items-center justify-center">
+    <div class="w-full mx-auto flex max-[1300px]:flex-col items-center justify-center gap-8 px-4 md:px-2">
+        <img src="sad.svg" alt="" class="w-full mt-20 md:mt-0 md:h-96 md:w-auto">
         <div class="bg-white p-8 rounded-lg shadow-lg w-full md:w-4/5 lg:w-[700px]">
             <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">Tell us about yourself</h2>
 
@@ -37,7 +38,7 @@
                     </label>
                     <textarea
                         class="w-full p-3 border rounded-lg h-40 resize-none focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
-                        placeholder="About Yourself..." required></textarea>
+                        placeholder="About Yourself..." name="bio" required></textarea>
                 </div>
 
                 <!-- Required Skills -->
@@ -46,7 +47,7 @@
                         <i class="fas fa-tools mr-2"></i>Required Skills
                     </label>
                     <select id="mySelect"
-                        class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+                        class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent" name="skills"
                         multiple>
                         <option value="JavaScript">JavaScript</option>
                         <option value="Python">Python</option>
@@ -62,7 +63,7 @@
                     </label>
                     <input type="url"
                         class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
-                        placeholder="https://github.com/username" required>
+                        placeholder="https://github.com/username" name="github" required>
                 </div>
 
                 <!-- LinkedIn URL -->
@@ -72,7 +73,7 @@
                     </label>
                     <input type="url"
                         class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
-                        placeholder="https://linkedin.com/in/username" required>
+                        placeholder="https://linkedin.com/in/username" name="linkedin" required>
                 </div>
 
                 <!-- Stack Overflow URL -->
@@ -82,7 +83,7 @@
                     </label>
                     <input type="url"
                         class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
-                        placeholder="https://stackoverflow.com/users/username" required>
+                        placeholder="https://stackoverflow.com/users/username" name="stackoverflow" required>
                 </div>
 
                 <!-- Website URL -->
@@ -92,7 +93,7 @@
                     </label>
                     <input type="url"
                         class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
-                        placeholder="https://yourwebsite.com" required>
+                        placeholder="https://yourwebsite.com" name="website" required>
                 </div>
 
                 <!-- Submit Button -->

@@ -122,42 +122,7 @@ function getExplore() {
     allExplore.classList.toggle('flex')
     allExplore.classList.toggle('hidden')
 }
-
-
-// pillbox
-const predefinedOptions = ["JavaScript", "Python", "React", "Node.js", "Tailwind CSS", "Vue.js", "Django", "Flask", "Express.js"];
-const selectedPills = new Set();
-const input = document.getElementById("pillInput");
-const pillbox = document.getElementById("pillbox");
-const suggestionsContainer = document.getElementById("suggestions");
-
-// Show suggestions as user types
-input.addEventListener("input", function () {
-    const query = input.value.toLowerCase();
-    suggestionsContainer.innerHTML = "";
-
-    if (!query) {
-        suggestionsContainer.classList.add("hidden");
-        return;
-    }
-
-    const filteredOptions = predefinedOptions.filter(option => option.toLowerCase().includes(query) && !selectedPills.has(option));
-
-    if (filteredOptions.length === 0) {
-        suggestionsContainer.classList.add("hidden");
-        return;
-    }
-
-    suggestionsContainer.classList.remove("hidden");
-
-    filteredOptions.forEach(option => {
-        const div = document.createElement("div");
-        div.textContent = option;
-        div.className = "p-2 cursor-pointer hover:bg-gray-200";
-        div.onclick = () => selectOption(option);
-        suggestionsContainer.appendChild(div);
-    });
-});
+;
 
 // Handle option selection
 function selectOption(text) {

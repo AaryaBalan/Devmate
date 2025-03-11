@@ -12,7 +12,8 @@
 </head>
 
 <body class="flex items-center justify-center min-h-screen bg-gray-100">
-    <div class="w-full mx-auto flex items-center justify-center">
+    <div class="w-full mx-auto flex max-[1300px]:flex-col items-center justify-center gap-8 px-4 md:px-2">
+        <img src="emoji.svg" alt="" class="w-full md:mt-0 md:h-96 md:w-auto">
         <div class="bg-white p-8 rounded-lg shadow-lg w-full md:w-4/5 lg:w-[700px]">
             <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">More about you</h2>
 
@@ -38,78 +39,33 @@
                     </label>
                     <select
                         class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
-                        placeholder="About Yourself..." required>
-                        <option value="Open For Collaboration"></option>
-                        <option value="Open For Collaboration"></option>
+                        placeholder="About Yourself..." name="bannerDescribe" required>
+                        <option value="Open For Collaboration">Available for collaboration</option>
+                        <option value="Open to part-time collaboration">Open to part-time collaboration</option>
+                        <option value="Open to freelance collaboration">Open to freelance collaboration</option>
+                        <option value="Unavailable">Unavailable</option>
                     </select>
                         
                 </div>
 
-                <!-- About Yourself -->
+                <!-- character -->
                 <div>
                     <label class="block text-gray-700 font-medium mb-2">
                         <i class="fas fa-user mr-2"></i>Describe Yourself
                     </label>
-                    <textarea
-                        class="w-full p-3 border rounded-lg h-40 resize-none focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
-                        placeholder="About Yourself..." required></textarea>
-                </div>
-
-                <!-- Required Skills -->
-                <div>
-                    <label class="block text-gray-700 font-medium mb-2">
-                        <i class="fas fa-tools mr-2"></i>Required Skills
-                    </label>
-                    <select id="mySelect"
-                        class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
-                        multiple>
-                        <option value="JavaScript">JavaScript</option>
-                        <option value="Python">Python</option>
-                        <option value="React">React</option>
-                        <option value="Node.js">Node.js</option>
+                    <select
+                        class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+                        placeholder="About Yourself..." name="character" required>
+                        <option value="Open For Collaboration">Available for collaboration</option>
+                        <option value="Open to part-time collaboration">Open to part-time collaboration</option>
+                        <option value="Open to freelance collaboration">Open to freelance collaboration</option>
+                        <option value="Unavailable">Unavailable</option>
                     </select>
+                
                 </div>
 
-                <!-- GitHub URL -->
-                <div>
-                    <label class="block text-gray-700 font-medium mb-2">
-                        <i class="fab fa-github mr-2"></i>GitHub URL
-                    </label>
-                    <input type="url"
-                        class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
-                        placeholder="https://github.com/username" required>
-                </div>
-
-                <!-- LinkedIn URL -->
-                <div>
-                    <label class="block text-gray-700 font-medium mb-2">
-                        <i class="fab fa-linkedin mr-2"></i>LinkedIn URL
-                    </label>
-                    <input type="url"
-                        class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
-                        placeholder="https://linkedin.com/in/username" required>
-                </div>
-
-                <!-- Stack Overflow URL -->
-                <div>
-                    <label class="block text-gray-700 font-medium mb-2">
-                        <i class="fab fa-stack-overflow mr-2"></i>Stack Overflow URL
-                    </label>
-                    <input type="url"
-                        class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
-                        placeholder="https://stackoverflow.com/users/username" required>
-                </div>
-
-                <!-- Website URL -->
-                <div>
-                    <label class="block text-gray-700 font-medium mb-2">
-                        <i class="fas fa-globe mr-2"></i>Website URL
-                    </label>
-                    <input type="url"
-                        class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
-                        placeholder="https://yourwebsite.com" required>
-                </div>
-
+                <!-- About Yourself -->
+                
                 <!-- Submit Button -->
                 <button type="submit"
                     class="w-full bg-black text-white p-3 rounded-lg hover:bg-gray-800 transition duration-300 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
