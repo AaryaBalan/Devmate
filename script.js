@@ -92,85 +92,15 @@ const uploadVideo = () => {
 }
 
 
-const skills = [];
-const addSkills = (e) => {
-    if (e.key === 'Enter') {
-        e.preventDefault();
-        const skillsContainer = document.getElementById('skillsContainer')
-        skillsContainer.classList.add('flex')
-        skillsContainer.classList.remove('hidden')
-        const skill = e.target.value.toUpperCase();
-
-        if (!skills.includes(skill)) {
-            skillsContainer.innerHTML +=
-                `<div class="bg-black text-white px-3 py-1 rounded-full">${skill}</div>`;
-
-            skills.push(skill);
-        }
-        e.target.value = "";
-    }
-};
-
 
 function getExplore() {
     const allExplore = document.getElementById('allExplore')
-    console.log(this)
-    if (this.innerHTML) {
-
-        document.getElementById('exploreTitle').innerHTML = this.innerHTML
-    }
     allExplore.classList.toggle('flex')
     allExplore.classList.toggle('hidden')
 }
 ;
 
-// Handle option selection
-function selectOption(text) {
-    if (!selectedPills.has(text)) {
-        selectedPills.add(text);
-        createPill(text);
-    }
-    input.value = "";
-    suggestionsContainer.classList.add("hidden");
-}
 
-// Create pill element
-function createPill(text) {
-    const pill = document.createElement("div");
-    pill.className = "flex items-center bg-blue-500 text-white px-3 py-1 rounded-full";
-
-    const pillText = document.createElement("span");
-    pillText.textContent = text;
-
-    const closeBtn = document.createElement("button");
-    closeBtn.innerHTML = "&times;";
-    closeBtn.className = "ml-2 text-white font-bold focus:outline-none";
-    closeBtn.onclick = () => {
-        pill.remove();
-        selectedPills.delete(text);
-    };
-
-    pill.appendChild(pillText);
-    pill.appendChild(closeBtn);
-    pillbox.appendChild(pill);
-}
-
-// Allow selection with Enter key
-input.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        document.getElementById('pillbox').classList.remove('hidden')
-        const firstSuggestion = suggestionsContainer.querySelector("div");
-        if (firstSuggestion) selectOption(firstSuggestion.textContent);
-    }
-});
-
-// Hide suggestions when clicking outside
-document.addEventListener("click", function (event) {
-    if (!event.target.closest("#suggestions") && event.target !== input) {
-        suggestionsContainer.classList.add("hidden");
-    }
-});
 
 
 
@@ -219,6 +149,20 @@ const setImgOriginal = () => {
     postImgContainer.classList.remove('aspect-square')
     postImgContainer.classList.add('aspect-video')
 }
+
+// for toggling the comments
+const commentBtn = document.querySelectorAll('.commentBtn')
+const commentsSection = document.querySelectorAll('.commentsSection')
+commentBtn.forEach((element, i) => {
+    element.addEventListener('click', () => {
+        if (commentsSection[i].classList.contains("hidden")) {
+            commentsSection[i].classList.remove('hidden')
+        }
+        else {
+            commentsSection[i].classList.add('hidden')
+        }
+    })
+});
 
 
 // upload post
@@ -275,3 +219,5 @@ function getAgenda() {
     allAgenda.classList.toggle('flex')
     allAgenda.classList.toggle('hidden')
 }
+
+

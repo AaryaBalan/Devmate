@@ -28,17 +28,5 @@ eventsBtn.addEventListener('click', () => {
     savedEventSection.classList.add('block')
 })
 
-// for toggling the comments
-const commentBtn = document.querySelectorAll('.commentBtn')
-const commentsSection = document.querySelectorAll('.commentsSection')
-commentBtn.forEach((element, i) => {
-    element.addEventListener('click', () => {
-        if (commentsSection[i].classList.contains("hidden")){
-            commentsSection[i].classList.remove('hidden')
-        }
-        else{
-            commentsSection[i].classList.add('hidden')
-        }
-    })
-});
+
 
