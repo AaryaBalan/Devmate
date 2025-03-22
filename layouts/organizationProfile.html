@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <script src="https://kit.fontawesome.com/d8ca3bfef7.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.css"
@@ -113,7 +113,7 @@
                 <div class="w-full flex flex-col items-center md:gap-y-10 bg-white">
                     <div class="relative w-full h-32 bg-[#444444] md:h-64">
                         <div class="absolute -bottom-16 md:-bottom-20 left-[calc(50%-4rem)] bg-black rounded-md">
-                            <img src="profile.webp" alt="" class="rounded-md  w-32 h-32 md:w-40 md:h-40"
+                            <img src="../assets/profile.webp" alt="" class="rounded-md  w-32 h-32 md:w-40 md:h-40"
                                 onclick="viewProfile()" id="originalProfile">
                         </div>
                         <div class="absolute right-10 -bottom-10 flex flex-col">
@@ -217,14 +217,14 @@
                     <div class=" bg-white rounded-md px-3 py-5 flex justify-between">
                         <div class="flex flex-col gap-y-5">
                             <div class="flex gap-x-3 items-start">
-                                <img class="w-12 h-12" src="birthday_icon.svg" alt="">
+                                <img class="w-12 h-12" src="../assets/birthday_icon.svg" alt="">
                                 <div class="w-full">
                                     <p class="font-bold">Founded</p>
                                     <p class="break-words text-justify text-[#686868]">November 1, 2006</p>
                                 </div>
                             </div>
                             <!-- <div class="flex gap-x-3 items-start">
-                                <img class="w-12 h-12" src="about_icon.svg" alt="">
+                                <img class="w-12 h-12" src="../assets/about_icon.svg" alt="">
                                 <div class="w-full">
                                     <p class="font-bold">Discription</p>
                                     <p class="break-words text-justify text-[#686868]">Lorem ipsum dolor sit amet
@@ -234,14 +234,14 @@
                                 </div>
                             </div> -->
                             <div class="flex gap-x-3 items-start">
-                                <img class="w-12 h-12" src="email_icon.svg" alt="">
+                                <img class="w-12 h-12" src="../assets/email_icon.svg" alt="">
                                 <div class="w-full">
                                     <p class="font-bold">Email</p>
                                     <p class="break-words text-justify text-[#686868]">sampleemail@gmail.com</p>
                                 </div>
                             </div>
                             <div class="flex gap-x-3 items-start">
-                                <img class="w-12 h-12" src="call_icon.svg" alt="">
+                                <img class="w-12 h-12" src="../assets/call_icon.svg" alt="">
                                 <div class="w-full">
                                     <p class="font-bold">Phone</p>
                                     <p class="break-words text-justify text-[#686868]">9999999999</p>
@@ -249,7 +249,7 @@
                             </div>
 
                             <div class="flex gap-x-3 items-start">
-                                <img class="w-12 h-12" src="building.svg" alt="">
+                                <img class="w-12 h-12" src="../assets/building.svg" alt="">
                                 <div class="w-full">
                                     <p class="font-bold">Orgainization Type</p>
                                     <p class="break-words text-justify text-[#686868]">Private LTD</p>
@@ -257,7 +257,7 @@
                             </div>
                         </div>
                         <div class="cursor-pointer" onclick="openEdit()">
-                            <img src="plus-edit.svg" alt="" class="w-7 h-7">
+                            <img src="../assets/plus-edit.svg" alt="" class="w-7 h-7">
                         </div>
                     </div>
 
@@ -265,7 +265,7 @@
                         <div class="flex flex-col gap-y-6 gap-x-6 flex-wrap bg p-3">
                             <div class="self-end border border-black px-3 py-1 flex gap-x-2 items-center cursor-pointer bg-white"
                                 onclick="openPost()">
-                                <img src="plus-edit.svg" alt="" class="w-6 h-6">
+                                <img src="../assets/plus-edit.svg" alt="" class="w-6 h-6">
                                 <p>New Post</p>
                             </div>
 
@@ -273,7 +273,8 @@
                             <div class="bg-white border rounded-lg w-full max-w-[34rem] p-4 mx-auto">
                                 <!-- User Info -->
                                 <div class="flex items-center space-x-3">
-                                    <img src="profile.webp" alt="User" class="w-10 h-10 rounded-full object-cover">
+                                    <img src="../assets/profile.webp" alt="User"
+                                        class="w-10 h-10 rounded-full object-cover">
                                     <div>
                                         <a class="font-semibold">John Doe</a>
                                         <p class="text-xs text-gray-500">2 hours ago</p>
@@ -291,7 +292,7 @@
 
                                 <!-- Post Image -->
                                 <div class="mt-3 w-full aspect-square overflow-hidden">
-                                    <img src="thumbnail.png" alt="Post" class="w-full h-full object-cover">
+                                    <img src="../assets/thumbnail.png" alt="Post" class="w-full h-full object-cover">
                                 </div>
 
                                 <!-- Actions -->
@@ -316,7 +317,7 @@
                                     <div class="flex flex-col gap-y-4">
                                         <!-- single comment -->
                                         <div class="flex items-start space-x-2">
-                                            <img src="profile.webp" alt="User"
+                                            <img src="../assets/profile.webp" alt="User"
                                                 class="w-10 h-10 rounded-full object-cover">
                                             <div class="bg-gray-100 p-2 rounded-lg w-full">
                                                 <p class="text-sm font-semibold">user 1</p>
@@ -327,7 +328,7 @@
 
 
                                         <div class="flex items-start space-x-2">
-                                            <img src="projects.jpeg" alt="User"
+                                            <img src="../assets/projects.jpeg" alt="User"
                                                 class="w-10 h-10 rounded-full object-cover">
                                             <div class="bg-gray-100 p-2 rounded-lg w-full">
                                                 <p class="text-sm font-semibold">user 2</p>
@@ -344,7 +345,7 @@
 
                                     <!-- Add a Comment -->
                                     <div class="flex items-center space-x-2 mt-3">
-                                        <!-- <img src="profile.webp" alt="User" class="w-10 h-10 rounded-full object-cover"> -->
+                                        <!-- <img src="../assets/profile.webp" alt="User" class="w-10 h-10 rounded-full object-cover"> -->
                                         <input type="text" placeholder="Write a comment..."
                                             class="flex-1 border p-2 rounded-lg outline-none">
                                         <button
@@ -357,7 +358,8 @@
                             <!-- Another Post -->
                             <div class="bg-white border rounded-lg w-full max-w-[34rem] p-4 mx-auto">
                                 <div class="flex items-center space-x-3">
-                                    <img src="profile.webp" alt="User" class="w-10 h-10 rounded-full object-cover">
+                                    <img src="../assets/profile.webp" alt="User"
+                                        class="w-10 h-10 rounded-full object-cover">
                                     <div>
                                         <a class="font-semibold">Emily Smith</a>
                                         <p class="text-xs text-gray-500">5 hours ago</p>
@@ -377,7 +379,8 @@
                                     rem eius.
                                 </p>
                                 <div class="mt-3 w-full aspect-video overflow-hidden bg-[#f8fafd]">
-                                    <img src="singleProject.png" alt="Post" class="w-full h-full object-contain">
+                                    <img src="../assets/singleProject.png" alt="Post"
+                                        class="w-full h-full object-contain">
                                 </div>
                                 <div class="flex justify-between mt-3 text-gray-600 text-sm">
                                     <div class="flex gap-x-3">
@@ -399,7 +402,7 @@
                                     <div class="flex flex-col gap-y-4">
                                         <!-- single comment -->
                                         <div class="flex items-start space-x-2">
-                                            <img src="profile.webp" alt="User"
+                                            <img src="../assets/profile.webp" alt="User"
                                                 class="w-10 h-10 rounded-full object-cover">
                                             <div class="bg-gray-100 p-2 rounded-lg w-full">
                                                 <p class="text-sm font-semibold">user 1</p>
@@ -411,7 +414,7 @@
 
                                     <!-- Add a Comment -->
                                     <div class="flex items-center space-x-2 mt-3">
-                                        <!-- <img src="profile.webp" alt="User" class="w-10 h-10 rounded-full object-cover"> -->
+                                        <!-- <img src="../assets/profile.webp" alt="User" class="w-10 h-10 rounded-full object-cover"> -->
                                         <input type="text" placeholder="Write a comment..."
                                             class="flex-1 border p-2 rounded-lg outline-none">
                                         <button
@@ -429,32 +432,32 @@
                     <div class="flex flex-col justify-center items-center  w-full gap-y-10">
                         <a href="createEvent.html"
                             class="self-end border border-black px-3 py-1 flex gap-x-2 items-center cursor-pointer bg-white">
-                            <img src="plus-edit.svg" alt="" class="w-6 h-6">
+                            <img src="../assets/plus-edit.svg" alt="" class="w-6 h-6">
                             <p>New Events</p>
                         </a>
 
                         <!-- start of 1st event -->
                         <div class="flex flex-col w-full md:w-[34rem] bg-white">
                             <div class="w-full aspect-video overflow-hidden bg-[#d4d4d4] relative dot">
-                                <img src="singleProject.png" alt="Post" class="w-full h-full object-cover">
+                                <img src="../assets/singleProject.png" alt="Post" class="w-full h-full object-cover">
                                 <div
                                     class="absolute top-3 right-3 bg-[#0000002c] rounded-full p-1.5 backdrop-blur cursor-pointer">
-                                    <img src="save.svg" alt="" class="w-7 h-7">
+                                    <img src="../assets/save.svg" alt="" class="w-7 h-7">
                                 </div>
                             </div>
                             <div class=" flex justify-between p-3 items-end">
                                 <div class="flex flex-col gap-y-1">
                                     <div class="flex gap-x-2 items-start">
-                                        <img src="event.svg" alt="" class="w-5 h-5">
+                                        <img src="../assets/event.svg" alt="" class="w-5 h-5">
                                         <div class="font-bold">Event Title</div>
                                     </div>
                                     <!-- <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut quo eum suscipit aliquid enim porro quos, iste quaerat cumque, omnis delectus aperiam, dolores earum tempora cum! Quas veritatis inventore consectetur!</div> -->
                                     <div class="flex gap-x-2 items-start">
-                                        <img src="category.svg" alt="" class="w-5 h-5">
+                                        <img src="../assets/category.svg" alt="" class="w-5 h-5">
                                         <div class="text-[#686868]">lore</div>
                                     </div>
                                     <div class="flex gap-x-2 items-start">
-                                        <img src="location_icon.svg" alt="" class="w-5 h-5">
+                                        <img src="../assets/location_icon.svg" alt="" class="w-5 h-5">
                                         <div class="text-[#686868]">Banglore, India</div>
                                     </div>
                                 </div>
@@ -472,26 +475,26 @@
 
                         <div class="flex flex-col w-full md:w-[34rem] bg-white">
                             <div class="w-full aspect-video overflow-hidden bg-[#d4d4d4] relative">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCthRyJ1Sh4X8HyhnyiqJLBxsULXwuz3TaRg&s"
+                                <img src="../assets/https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCthRyJ1Sh4X8HyhnyiqJLBxsULXwuz3TaRg&s"
                                     alt="Post" class="w-full h-full object-contain">
                                 <div
                                     class="absolute top-3 right-3 bg-[#0000002c] rounded-full p-1.5 backdrop-blur cursor-pointer">
-                                    <img src="save.svg" alt="" class="w-7 h-7">
+                                    <img src="../assets/save.svg" alt="" class="w-7 h-7">
                                 </div>
                             </div>
                             <div class=" flex justify-between p-3 items-end">
                                 <div class="flex flex-col gap-y-1">
                                     <div class="flex gap-x-2 items-start">
-                                        <img src="event.svg" alt="" class="w-5 h-5">
+                                        <img src="../assets/event.svg" alt="" class="w-5 h-5">
                                         <div class="font-bold">Event Title</div>
                                     </div>
                                     <!-- <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut quo eum suscipit aliquid enim porro quos, iste quaerat cumque, omnis delectus aperiam, dolores earum tempora cum! Quas veritatis inventore consectetur!</div> -->
                                     <div class="flex gap-x-2 items-start">
-                                        <img src="category.svg" alt="" class="w-5 h-5">
+                                        <img src="../assets/category.svg" alt="" class="w-5 h-5">
                                         <div class="text-[#686868]">Category</div>
                                     </div>
                                     <div class="flex gap-x-2 items-start">
-                                        <img src="location_icon.svg" alt="" class="w-5 h-5">
+                                        <img src="../assets/location_icon.svg" alt="" class="w-5 h-5">
                                         <div class="text-[#686868]">Banglore, India</div>
                                     </div>
                                 </div>
@@ -521,7 +524,8 @@
                     <!-- single Orgainization -->
                     <div class="flex gap-x-3  justify-between items-center border w-full px-2 py-4 rounded-md">
                         <div class="flex gap-x-3 items-start">
-                            <img src="profile.webp" class="w-14 h-14 rounded-md" onclick="goTo('profile/html')">
+                            <img src="../assets/profile.webp" class="w-14 h-14 rounded-md"
+                                onclick="goTo('profile/html')">
                             <div class="flex flex-col gap-y-3">
                                 <a class="underline font-bold">Asymmetric Technical</a>
                                 <p>Software Development</p>
@@ -540,7 +544,7 @@
 
                     <div class="flex gap-x-3 justify-between items-center border w-full px-2 py-4 rounded-md">
                         <div class="flex gap-x-3 items-start ">
-                            <img src="team.jpeg" class="w-14 h-14 rounded-md"
+                            <img src="../assets/team.jpeg" class="w-14 h-14 rounded-md"
                                 onclick="goTo('www.w3schools.com/jsref/met_win_open.asp')">
                             <div class="flex flex-col gap-y-3">
                                 <a class="underline font-bold">Asymmetric Technical</a>
@@ -567,11 +571,11 @@
     <!-- for viewing the profile -->
     <div id="zoomProfile" class="hidden items-center justify-center fixed top-0 bottom-0  w-full">
         <div class="relative">
-            <img src="profile.webp" alt=""
+            <img src="../assets/profile.webp" alt=""
                 class="w-52 h-52 md:w-80 md:h-80 object-cover rounded-full border-8 border-[#00000070]">
             <button
                 class="absolute -right-3 -top-3 md:top-0 md:right-0 border bg-white border-black rounded-full w-10 h-10"
-                onclick="closeProfile()"><img src="close.svg" alt=""></button>
+                onclick="closeProfile()"><img src="../assets/close.svg" alt=""></button>
         </div>
     </div>
 
@@ -589,14 +593,14 @@
                 <div class="self-center mb-4">
                     <div class="flex gap-x-3 items-center max-[500px]:flex-col gap-y-3">
                         <div class="relative">
-                            <img src="profile.webp" alt="" class="rounded-lg w-40 h-40" id="image">
+                            <img src="../assets/profile.webp" alt="" class="rounded-lg w-40 h-40" id="image">
                             <label id="imageContainer" for="imgInput"
                                 class="absolute -right-3 -bottom-3 bg-black rounded-full p-2 cursor-pointer"><img
                                     src="edit.svg" alt="" class="w-7 h-7"></label>
                         </div>
                         <div class="hidden gap-y-2 items-center flex-col" id="cropImgContainer">
                             <p class="bold underline">crop image</p>
-                            <img src="" alt="" class="w-40 h-40" id="croppingImg">
+                            <img src="../assets/" alt="" class="w-40 h-40" id="croppingImg">
                         </div>
                         <input type="file" name="profileImg" class="hidden" id="imgInput" accept="image/*">
                         <div class="cursor-pointer hidden bg-[#6feb85] px-2 py-1 rounded-md" id="cropBtn"
@@ -721,12 +725,12 @@
                 <div class="flex flex-col items-start gap-4 border p-4 w-full max-w-[34rem] mx-auto">
                     <!-- Post Image -->
                     <div class="aspect-video overflow-hidden w-full bg-[#f8fafd]" id="postImgContainer">
-                        <img src="" alt="Post Banner" class="hidden w-full h-full object-contain aspect-video"
+                        <img src="../assets/" alt="Post Banner" class="hidden w-full h-full object-contain aspect-video"
                             id="postImg">
                         <div id="uploadPostContainer" class="flex justify-center items-center h-full">
                             <label for="uploadPost">
                                 <div class="flex items-center justify-center flex-col h-full">
-                                    <img src="uploadPost.svg" alt="" class="aspect-video w-52">
+                                    <img src="../assets/uploadPost.svg" alt="" class="aspect-video w-52">
                                     <p>Upload the files here...</p>
                                 </div>
                             </label>
@@ -759,8 +763,8 @@
     </div>
 
 
-    <script src="script.js"></script>
-    <script src="organizationProfile.js"></script>
+    <script src="../scripts/organizationProfile.js"></script>
+    <script src="../scripts/script.js"></script>
 </body>
 
 </html>

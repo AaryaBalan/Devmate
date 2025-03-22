@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <script src="https://kit.fontawesome.com/d8ca3bfef7.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -100,16 +100,18 @@
                     <div class="flex flex-col gap-y-2 items-center">
                         <div class="flex gap-x-2 items-center bg-black text-white px-5 py-1">
                             <div id="exploreTitle" onclick="getAgenda()" class="cursor-pointer">Projects</div>
-                            <img src="down.svg" alt="" class="w-7 h-7 cursor-pointer" onclick="getAgenda()">
+                            <img src="../assets/down.svg" alt="" class="w-7 h-7 cursor-pointer" onclick="getAgenda()">
                         </div>
                         <div class="hidden flex-col gap-y-1 bg-[#00000033] px-5 py-2 absolute top-12 left-0 z-10 backdrop-blur rounded shadow-xl"
                             id="allAgenda">
-                            <a href="" class="hover:scale-110 transition-all hover:font-bold px-3 py-1 cursor-pointer text-white">
+                            <a href=""
+                                class="hover:scale-110 transition-all hover:font-bold px-3 py-1 cursor-pointer text-white">
                                 Projects</a>
                             <a href=""
                                 class="hover:scale-110 transition-all hover:font-bold px-3 py-1 cursor-pointer text-white">Events
                             </a>
-                            <a href="" class="hover:scale-110 transition-all hover:font-bold px-3 py-1 cursor-pointer text-white">
+                            <a href=""
+                                class="hover:scale-110 transition-all hover:font-bold px-3 py-1 cursor-pointer text-white">
                                 Organizations</a>
                         </div>
                     </div>
@@ -120,7 +122,7 @@
                 <!-- if no project and events -->
                 <div class="flex  flex-col w-full justify-center">
                     <div>
-                        <img src="sad.svg" alt="" class="w-96">
+                        <img src="../assets/sad.svg" alt="" class="w-96">
                     </div>
                     <div class="font-medium text-xl">Currenty You didn't registered in any project or event</div>
                 </div>
@@ -218,28 +220,33 @@
 
                             <div
                                 class="max-[500px]:w-full w-96 aspect-video overflow-hidden bg-[#d4d4d4] relative border">
-                                <img src="thumbnail.png" alt="Post" class="w-full h-full object-cover object-top">
+                                <img src="../assets/thumbnail.png" alt="Post"
+                                    class="w-full h-full object-cover object-top">
                             </div>
                             <div class="flex flex-col gap-y-3 items-start w-full">
                                 <div class="flex justify-between pt-2 items-end">
                                     <div class="flex flex-col gap-y-2 mt-2">
                                         <div class="flex gap-x-2 items-start">
-                                            <img src="{% static 'assets/org_event.svg' %}" alt="" class="w-7 h-7">
+                                            <img src="../assets/{% static 'assets/org_event.svg' %}" alt=""
+                                                class="w-7 h-7">
                                             <div class="font-bold">Event</div>
                                         </div>
                                         <div class="flex gap-x-2 items-start">
-                                            <img src="{% static 'assets/category.svg' %}" alt="" class="w-7 h-7">
+                                            <img src="../assets/{% static 'assets/category.svg' %}" alt=""
+                                                class="w-7 h-7">
                                             <div class="text-[#686868]">lorem</div>
                                         </div>
                                         <div class="flex gap-x-2 items-start">
-                                            <img src="{% static 'assets/organization.svg' %}" alt="" class="w-7 h-7">
+                                            <img src="../assets/{% static 'assets/organization.svg' %}" alt=""
+                                                class="w-7 h-7">
                                             <div class="text-[#686868]">Lorem ipsum dolor sit amet, consectetur
                                                 adipisicing elit. Blanditiis omnis officiis porro ab illum in eum earum
                                                 impedit quo, magni debitis nulla nobis similique, quos laudantium
                                                 corporis! Corporis, velit error!</div>
                                         </div>
                                         <div class="flex gap-x-2 items-center">
-                                            <img src="{% static 'assets/calendar.svg' %}" alt="" class="w-7 h-7">
+                                            <img src="../assets/{% static 'assets/calendar.svg' %}" alt=""
+                                                class="w-7 h-7">
                                             <p class='text-[#686868]'>Today</p>
                                         </div>
                                     </div>
@@ -284,12 +291,12 @@
                     Create Post</h1>
                 <div class="flex flex-col items-start gap-4 border p-4 w-full max-w-[34rem] mx-auto">
                     <div class="aspect-video overflow-hidden w-full bg-[#f8fafd]" id="postImgContainer">
-                        <img src="" alt="Post Banner" class="hidden w-full h-full object-contain aspect-video"
+                        <img src="../assets/" alt="Post Banner" class="hidden w-full h-full object-contain aspect-video"
                             id="postImg">
                         <div id="uploadPostContainer" class="flex justify-center items-center h-full">
                             <label for="uploadPost">
                                 <div class="flex items-center justify-center flex-col h-full">
-                                    <img src="uploadPost.svg" alt="" class="aspect-video w-52">
+                                    <img src="../assets/uploadPost.svg" alt="" class="aspect-video w-52">
                                     <p>Upload the files here...</p>
                                 </div>
                             </label>
@@ -316,7 +323,7 @@
         </form>
     </div>
 
-    <script src="script.js"></script>
+    <script src="../scripts/script.js"></script>
 </body>
 
 </html>

@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Upload & Crop (4:3 Ratio)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
     <style>
-        body { text-align: center; font-family: Arial, sans-serif; }
-        #preview-container { 
-            width: 400px; /* Set the width */
-            height: 300px; /* Set the height */
-            overflow: hidden; 
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        #preview-container {
+            width: 400px;
+            /* Set the width */
+            height: 300px;
+            /* Set the height */
+            overflow: hidden;
             margin: 10px auto;
             border: 2px solid #ccc;
             position: relative;
         }
-        #preview-image { 
-            max-width: 100%; 
+
+        #preview-image {
+            max-width: 100%;
             display: none;
         }
-        #cropped-container { margin-top: 10px; }
-        button { margin: 5px; padding: 10px; cursor: pointer; }
+
+        #cropped-container {
+            margin-top: 10px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
+
 <body>
 
     <h2>Upload and Crop Image (4:3 Aspect Ratio)</h2>
-    <label for="imageInput"><img src="profile.webp" alt=""></label>
+    <label for="imageInput"><img src="../assets/profile.webp" alt=""></label>
     <input type="file" id="imageInput" accept="image/*">
     <div id="preview-container">
         <img id="preview-image">
@@ -53,7 +70,7 @@
                     if (cropper) {
                         cropper.destroy();
                     }
-                    
+
                     cropper = new Cropper(previewImage, {
                         aspectRatio: 4 / 3, // Uniform 4:3 aspect ratio
                         viewMode: 2,
@@ -68,7 +85,7 @@
 
         cropButton.addEventListener('click', () => {
             const canvas = cropper.getCroppedCanvas({ width: 400, height: 300 }); // 4:3 aspect ratio
-            croppedContainer.innerHTML = `<img src="${canvas.toDataURL()}" width="200">`;
+            croppedContainer.innerHTML = `<img src="../assets/${canvas.toDataURL()}" width="200">`;
 
             // Convert cropped image to a Blob and prepare for upload
             canvas.toBlob((blob) => {
@@ -80,12 +97,13 @@
                     method: 'POST',
                     body: formData,
                 })
-                .then(response => response.json())
-                .then(data => console.log('Upload successful:', data))
-                .catch(error => console.error('Upload error:', error));
+                    .then(response => response.json())
+                    .then(data => console.log('Upload successful:', data))
+                    .catch(error => console.error('Upload error:', error));
             }, 'image/jpeg');
         });
     </script>
 
 </body>
+
 </html>

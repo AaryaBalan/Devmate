@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <script src="https://kit.fontawesome.com/d8ca3bfef7.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -102,7 +102,7 @@
                 <div class="flex flex-col gap-y-2 items-center">
                     <div class="flex gap-x-2 items-center bg-black text-white px-5 py-1">
                         <div id="exploreTitle" onclick="getExplore.call(this)" class="cursor-pointer">Events</div>
-                        <img src="down.svg" alt="" class="w-7 h-7" onclick="getExplore.call()">
+                        <img src="../assets/down.svg" alt="" class="w-7 h-7" onclick="getExplore.call()">
                     </div>
                     <div class="hidden flex-col gap-y-1 bg-[#00000033] px-5 py-2 absolute top-12 left-0 z-10 backdrop-blur rounded"
                         id="allExplore">
@@ -132,7 +132,7 @@
                                 class="md:w-96 w-full outline-none border border-black rounded-full border- bg-[#f6f6f6] text-[16px] px-2 py-1 text-black"
                                 placeholder="Search..">
                             <div class="flex gap-x-2 border px-3 py-1 border-black rounded-full cursor-pointer">
-                                <img src="search.svg" alt="" class="w-6 h-6">
+                                <img src="../assets/search.svg" alt="" class="w-6 h-6">
                                 <p class="hidden md:block">Search</p>
                             </div>
                         </div>
@@ -151,25 +151,25 @@
                     <!-- start of 1st event -->
                     <div class="flex flex-col w-full md:w-[34rem] bg-white p-4">
                         <div class="w-full aspect-video overflow-hidden bg-[#d4d4d4] relative dot">
-                            <img src="singleProject.png" alt="Post" class="w-full h-full object-cover">
+                            <img src="../assets/singleProject.png" alt="Post" class="w-full h-full object-cover">
                             <div
                                 class="absolute top-3 right-3 bg-[#0000002c] rounded-full p-1.5 backdrop-blur cursor-pointer">
-                                <img src="save.svg" alt="" class="w-7 h-7">
+                                <img src="../assets/save.svg" alt="" class="w-7 h-7">
                             </div>
                         </div>
                         <div class=" flex justify-between p-3 items-end">
                             <div class="flex flex-col gap-y-1">
                                 <div class="flex gap-x-2 items-start">
-                                    <img src="event.svg" alt="" class="w-5 h-5">
+                                    <img src="../assets/event.svg" alt="" class="w-5 h-5">
                                     <div class="font-bold">Event Title</div>
                                 </div>
                                 <!-- <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut quo eum suscipit aliquid enim porro quos, iste quaerat cumque, omnis delectus aperiam, dolores earum tempora cum! Quas veritatis inventore consectetur!</div> -->
                                 <div class="flex gap-x-2 items-start">
-                                    <img src="category.svg" alt="" class="w-5 h-5">
+                                    <img src="../assets/category.svg" alt="" class="w-5 h-5">
                                     <div class="text-[#686868]">lore</div>
                                 </div>
                                 <div class="flex gap-x-2 items-start">
-                                    <img src="location_icon.svg" alt="" class="w-5 h-5">
+                                    <img src="../assets/location_icon.svg" alt="" class="w-5 h-5">
                                     <div class="text-[#686868]">Banglore, India</div>
                                 </div>
                             </div>
@@ -187,26 +187,26 @@
 
                     <div class="flex flex-col w-full md:w-[34rem] bg-white p-4">
                         <div class="w-full aspect-video overflow-hidden bg-[#d4d4d4] relative">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCthRyJ1Sh4X8HyhnyiqJLBxsULXwuz3TaRg&s"
+                            <img src="../assets/https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCthRyJ1Sh4X8HyhnyiqJLBxsULXwuz3TaRg&s"
                                 alt="Post" class="w-full h-full object-contain">
                             <div
                                 class="absolute top-3 right-3 bg-[#0000002c] rounded-full p-1.5 backdrop-blur cursor-pointer">
-                                <img src="save.svg" alt="" class="w-7 h-7">
+                                <img src="../assets/save.svg" alt="" class="w-7 h-7">
                             </div>
                         </div>
                         <div class=" flex justify-between p-3 items-end">
                             <div class="flex flex-col gap-y-1">
                                 <div class="flex gap-x-2 items-start">
-                                    <img src="event.svg" alt="" class="w-5 h-5">
+                                    <img src="../assets/event.svg" alt="" class="w-5 h-5">
                                     <div class="font-bold">Event Title</div>
                                 </div>
                                 <!-- <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut quo eum suscipit aliquid enim porro quos, iste quaerat cumque, omnis delectus aperiam, dolores earum tempora cum! Quas veritatis inventore consectetur!</div> -->
                                 <div class="flex gap-x-2 items-start">
-                                    <img src="category.svg" alt="" class="w-5 h-5">
+                                    <img src="../assets/category.svg" alt="" class="w-5 h-5">
                                     <div class="text-[#686868]">Category</div>
                                 </div>
                                 <div class="flex gap-x-2 items-start">
-                                    <img src="location_icon.svg" alt="" class="w-5 h-5">
+                                    <img src="../assets/location_icon.svg" alt="" class="w-5 h-5">
                                     <div class="text-[#686868]">Banglore, India</div>
                                 </div>
                             </div>
@@ -298,7 +298,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="../scripts/script.js"></script>
 </body>
 
 </html>

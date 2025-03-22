@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <script src="https://kit.fontawesome.com/d8ca3bfef7.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -100,7 +100,7 @@
                     <div class="flex flex-col gap-y-2 items-center">
                         <div class="flex gap-x-2 items-center bg-black text-white px-5 py-1">
                             <div id="exploreTitle" onclick="getAgenda()" class="cursor-pointer">Projects</div>
-                            <img src="down.svg" alt="" class="w-7 h-7 cursor-pointer" onclick="getAgenda()">
+                            <img src="../assets/down.svg" alt="" class="w-7 h-7 cursor-pointer" onclick="getAgenda()">
                         </div>
                         <div class="hidden flex-col gap-y-1 bg-[#00000033] px-5 py-2 absolute top-12 left-0 z-10 backdrop-blur rounded shadow-xl"
                             id="allAgenda">
@@ -122,7 +122,7 @@
                 <!-- if no project and events -->
                 <div class="flex  flex-col w-full justify-center">
                     <div>
-                        <img src="sad.svg" alt="" class="w-96">
+                        <img src="../assets/sad.svg" alt="" class="w-96">
                     </div>
                     <div class="font-medium text-xl">Currenty You didn't registered in any project or event</div>
                 </div>
@@ -139,7 +139,8 @@
                         <div class="relative flex flex-col px-5 py-3 bg-white rounded-lg gap-y-4 w-full">
                             <div class="flex items-center justify-between gap-x-5">
                                 <div class="flex justify-start items-start w-full md:gap-x-5 gap-x-2">
-                                    <div class="shrink-0"><img src="profile.webp" alt="" class="w-12 h-12 rounded-md">
+                                    <div class="shrink-0"><img src="../assets/profile.webp" alt=""
+                                            class="w-12 h-12 rounded-md">
                                     </div>
                                     <div class="w-5/6 md:w-[90%]">
                                         <a href="https://v3.tailwindcss.com/docs/scroll-behavior"
@@ -184,7 +185,8 @@
                         <div class="relative flex flex-col px-5 py-3 bg-white rounded-lg gap-y-4 w-full">
                             <div class="flex items-center justify-between gap-x-5">
                                 <div class="flex justify-start items-start w-full md:gap-x-5 gap-x-2">
-                                    <div class="shrink-0"><img src="profile.webp" alt="" class="w-12 h-12 rounded-md">
+                                    <div class="shrink-0"><img src="../assets/profile.webp" alt=""
+                                            class="w-12 h-12 rounded-md">
                                     </div>
                                     <div class="w-5/6 md:w-[90%]">
                                         <a href="https://v3.tailwindcss.com/docs/scroll-behavior"
@@ -229,7 +231,8 @@
                         <div class="relative flex flex-col px-5 py-3 bg-white rounded-lg gap-y-4 w-full">
                             <div class="flex items-center justify-between gap-x-5">
                                 <div class="flex justify-start items-start w-full md:gap-x-5 gap-x-2">
-                                    <div class="shrink-0"><img src="profile.webp" alt="" class="w-12 h-12 rounded-md">
+                                    <div class="shrink-0"><img src="../assets/profile.webp" alt=""
+                                            class="w-12 h-12 rounded-md">
                                     </div>
                                     <div class="w-5/6 md:w-[90%]">
                                         <a href="https://v3.tailwindcss.com/docs/scroll-behavior"
@@ -297,12 +300,12 @@
                     Create Post</h1>
                 <div class="flex flex-col items-start gap-4 border p-4 w-full max-w-[34rem] mx-auto">
                     <div class="aspect-video overflow-hidden w-full bg-[#f8fafd]" id="postImgContainer">
-                        <img src="" alt="Post Banner" class="hidden w-full h-full object-contain aspect-video"
+                        <img src="../assets/" alt="Post Banner" class="hidden w-full h-full object-contain aspect-video"
                             id="postImg">
                         <div id="uploadPostContainer" class="flex justify-center items-center h-full">
                             <label for="uploadPost">
                                 <div class="flex items-center justify-center flex-col h-full">
-                                    <img src="uploadPost.svg" alt="" class="aspect-video w-52">
+                                    <img src="../assets/uploadPost.svg" alt="" class="aspect-video w-52">
                                     <p>Upload the files here...</p>
                                 </div>
                             </label>
@@ -329,7 +332,7 @@
         </form>
     </div>
 
-    <script src="script.js"></script>
+    <script src="../scripts/script.js"></script>
 </body>
 
 </html>
