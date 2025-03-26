@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Developer Banner</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0d0d0d;
+            color: #0f0;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .banner {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            border: 3px solid #0f0;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 15px #0f0;
+            background: rgba(0, 0, 0, 0.8);
+            overflow: hidden;
+        }
+
+        .glitch {
+            font-size: 2rem;
+            font-weight: 700;
+            position: relative;
+            animation: glitch 0.8s infinite alternate;
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: 2px 2px 0px #f00, -2px -2px 0px #0ff;
+            }
+
+            100% {
+                text-shadow: -2px -2px 0px #f00, 2px 2px 0px #0ff;
+            }
+        }
+
+        .terminal {
+            font-size: 1.2rem;
+            padding: 10px;
+            background: black;
+            color: #0f0;
+            border: 1px solid #0f0;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 15px;
+            animation: blinkText 1.2s steps(2, start) infinite;
+        }
+
+        @keyframes blinkText {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .binary-stream {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .binary {
+            position: absolute;
+            color: #0f0;
+            opacity: 0.7;
+            font-size: 12px;
+            animation: moveDown linear infinite;
+        }
+
+        @keyframes moveDown {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <h1 class="glitch">Developer Mode: Active</h1>
+        <p class="terminal">$ Now Collaborating with AI...</p>
+    </div>
+    <div class="binary-stream" id="binaryStream"></div>
+    <script>
+        function generateBinary() {
+            const stream = document.getElementById('binaryStream');
+            for (let i = 0; i < 30; i++) {
+                let binary = document.createElement('div');
+                binary.classList.add('binary');
+                binary.innerText = Math.random() > 0.5 ? '1' : '0';
+                binary.style.left = Math.random() * 100 + 'vw';
+                binary.style.animationDuration = Math.random() * 3 + 2 + 's';
+                stream.appendChild(binary);
+                setTimeout(() => binary.remove(), 5000);
+            }
+        }
+        setInterval(generateBinary, 500);
+    </script>
+</body>
+
+</html>
