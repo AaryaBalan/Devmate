@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Moods</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center justify-center min-h-screen bg-black text-white">
+    <div class="w-96 p-6 rounded-2xl shadow-lg bg-gray-900 text-white">
+        <label class="block text-lg font-semibold mb-2 text-[#6feb85]">Select Your Mood</label>
+        <select id="moodSelector"
+            class="w-full p-3 bg-black text-white border border-[#6feb85] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6feb85]">
+            <option value="😊">-- Choose Mood --</option>
+            <option value="🚀 Excited & Motivated">Excited & Motivated</option>
+            <option value="😤 Frustrated & Stressed">Frustrated & Stressed</option>
+            <option value="🔥 Focused & In the Flow">Focused & In the Flow</option>
+            <option value="😵 Overwhelmed & Lost">Overwhelmed & Lost</option>
+            <option value="🎉 Satisfied & Accomplished">Satisfied & Accomplished</option>
+            <option value="🔍 Curious & Exploratory">Curious & Exploratory</option>
+            <option value="😩 Annoyed & Tired">Annoyed & Tired</option>
+            <option value="🤬 Impatient & Debugging in Rage">Impatient & Debugging in Rage</option>
+            <option value="🤝 Collaborative & Helpful">Collaborative & Helpful</option>
+            <option value="🥱 Bored & Distracted">Bored & Distracted</option>
+        </select>
+        <div id="moodDisplay" class="mt-6 text-[10rem] text-[#6feb85] font-bold text-center">😊</div>
+    </div>
+
+    <script>
+        document.getElementById("moodSelector").addEventListener("change", function () {
+            let moodDisplay = document.getElementById("moodDisplay");
+            moodDisplay.innerHTML = this.value ? this.value.split(" ")[0] : "";
+            if (this.value) {
+                moodDisplay.classList.add("fade-in");
+                setTimeout(() => moodDisplay.classList.remove("fade-in"), 300);
+            }
+        });
+    </script>
+</body>
+
+</html>

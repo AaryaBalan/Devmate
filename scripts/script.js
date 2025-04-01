@@ -1,15 +1,30 @@
+const popup = document.getElementById('popup');
+const postOption = document.getElementById('postOption')
+
+function bodyClick() {
+    popup.classList.add('hidden')
+    popup.classList.remove('fixed')
+    postOption.classList.add('hidden')
+    postOption.classList.remove('absolute')
+}
 // show post option
 const showPostOption = () => {
-    const postOption = document.getElementById('postOption')
     postOption.classList.toggle('absolute')
     postOption.classList.toggle('hidden')
+    // showPopup()
+    popup.classList.add('hidden')
+    popup.classList.remove('fixed')
 }
+
 const showPopup = () => {
     // Code to show the popup
-    const popup = document.getElementById('popup');
     popup.classList.toggle('fixed')
     popup.classList.toggle('hidden')
+    // showPostOption()
+    postOption.classList.add('hidden')
+    postOption.classList.remove('absolute')
 }
+
 
 const openFilter = () => {
     if (window.screen.width < 1024) {
@@ -32,7 +47,6 @@ const closeFilter = () => {
 
 
 // for handling reply btn action
-
 const handleReply = (name) => {
     const textArea = document.getElementById('commentTextArea')
     textArea.placeholder = `Relpy to ${name}`
@@ -170,21 +184,23 @@ const uploadPost = document.getElementById('uploadPost')
 const uploadPostContainer = document.getElementById('uploadPostContainer')
 const uploadPostLabel = document.getElementById('uploadPostLabel')
 
-uploadPost.addEventListener('change', (event) => {
-    const postImg = document.getElementById('postImg')
-    const file = event.target.files[0]
-    if (file) {
-        const reader = new FileReader()
-        reader.onload = () => {
-            postImg.classList.remove('hidden')
-            postImg.classList.add('block')
-            postImg.src = reader.result
-            uploadPostContainer.classList.add('hidden')
-            uploadPostLabel.classList.remove('hidden')
+if (uploadPost) {
+    uploadPost.addEventListener('change', (event) => {
+        const postImg = document.getElementById('postImg')
+        const file = event.target.files[0]
+        if (file) {
+            const reader = new FileReader()
+            reader.onload = () => {
+                postImg.classList.remove('hidden')
+                postImg.classList.add('block')
+                postImg.src = reader.result
+                uploadPostContainer.classList.add('hidden')
+                uploadPostLabel.classList.remove('hidden')
+            }
+            reader.readAsDataURL(file)
         }
-        reader.readAsDataURL(file)
-    }
-})
+    })
+}
 
 // opening create post div function
 function openPost() {
@@ -219,5 +235,3 @@ function getAgenda() {
     allAgenda.classList.toggle('flex')
     allAgenda.classList.toggle('hidden')
 }
-
-
