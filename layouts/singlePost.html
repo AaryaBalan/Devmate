@@ -59,7 +59,7 @@
 
     <!-- main section -->
 
-    <div class="w-full lg:flex-row lg:flex lg:gap-x-5 md:flex flex flex-col md:justify-start md:items-start">
+    <div class="w-full lg:flex-row lg:flex lg:gap-x-5 md:flex flex flex-col md:justify-start md:items-start mb-20">
         <!-- sidenav -->
         <div
             class="text-black hidden w-1/5 flex-col justify-between h-[calc(100vh-57px)] sticky top-14 mt-14 py-7 bg-white  shadow-lg md:hidden lg:flex">
@@ -82,36 +82,39 @@
         </div>
 
         <!-- post events section -->
-        
 
 
 
-        <div
-            class="bg-white shadow-md rounded-lg p-4 mt-32  backdrop-blur-md flex flex-col md:flex-row gap-x-5">
+
+        <div class="bg-white shadow-md rounded-lg p-4 mt-32  backdrop-blur-md flex flex-col md:flex-row gap-x-5">
             <!-- User Info -->
-            <div class="lg:max-w-[36rem] md:max-w-[60%]">
+            <div class="lg:max-w-[36rem] md:max-w-[60%] md:-r border-[#7e7e7e]">
                 <div class="flex items-center space-x-3">
-                    <img src="../assets/profile.webp" alt="User" class="w-10 h-10 rounded-full object-cover">
+                    <div class="flex justify-center items-center w-12 h-12 border rounded-full overflow-hidden">
+                        <img src="../assets/profile.webp" alt="User" class="w-full h-full object-cover">
+                    </div>
                     <div>
                         <a class="font-semibold">John Doe</a>
                         <p class="text-xs text-gray-500">2 hours ago</p>
                     </div>
                 </div>
-        
+
+
+
                 <!-- Post Content -->
                 <p class="mt-3 text-[#686868]">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis repudiandae quis voluptate
                     eum, eos perferendis sunt! Laudantium praesentium labore officiis facilis, culpa eos non
                     libero placeat vero rerum illum ducimus.
                 </p>
-        
+
                 <!-- Post Image -->
                 <div class="mt-3 aspect-square overflow-hidden max-w-[34rem] ">
                     <img src="../assets/thumbnail.png" alt="Post" class="w-full h-full object-cover">
                 </div>
-        
+
                 <!-- Actions -->
-                <div class="flex justify-between mt-3 text-gray-600 text-sm">
+                <div class="flex justify-between mt-3 text-gray-600 text-sm pr-4">
                     <div class="flex gap-x-3">
                         <div class="flex items-center space-x-2 cursor-pointer hover:text-[#6feb85]">
                             <i class="text-xl fa-solid fa-heart"></i> <span>12 </span>
@@ -125,13 +128,13 @@
                     </div>
                 </div>
             </div>
-    
+
             <!-- Comments Section -->
-            <div class="mt-3 border-t pt-3 commentsSection lg:max-w-[36rem] md:max-w-[30%]">
+            <div class="mt-3 border-t pt-3 commentsSection lg:max-w-[36rem]  flex flex-col justify-between">
                 <!-- all Comments -->
-                <div class="flex flex-col gap-y-4">
+                <div class="flex flex-col gap-y-4 overflow-y-scroll md:h-[40rem] w-full">
                     <!-- single comment -->
-                    <div class="flex items-start space-x-2">
+                    <div class="flex items-start space-x-2 w-full">
                         <img src="../assets/profile.webp" alt="User" class="w-10 h-10 rounded-full object-cover">
                         <div class="bg-gray-100 p-2 rounded-lg w-full">
                             <p class="text-sm font-semibold">user 1</p>
@@ -139,8 +142,8 @@
                         </div>
                     </div>
                     <!-- end of single comment -->
-    
-    
+
+
                     <div class="flex items-start space-x-2">
                         <img src="../assets/projects.jpeg" alt="User" class="w-10 h-10 rounded-full object-cover">
                         <div class="bg-gray-100 p-2 rounded-lg w-full">
@@ -152,11 +155,12 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- Add a Comment -->
                 <div class="flex items-center space-x-2 mt-3">
                     <!-- <img src="../assets/profile.webp" alt="User" class="w-10 h-10 rounded-full object-cover"> -->
-                    <input type="text" placeholder="Write a comment..." class="flex-1 border p-2 rounded-lg outline-none">
+                    <input type="text" placeholder="Write a comment..."
+                        class="flex-1 border p-2 rounded-lg outline-none">
                     <button class="bg-black text-white px-3 py-1 rounded-md transition hover:scale-105">Post</button>
                 </div>
             </div>
