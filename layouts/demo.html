@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Futuristic Organization Banner</title>
+    <style>
+        svg {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+        }
+
+        .glow {
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                filter: drop-shadow(0 0 5px #6fea85) drop-shadow(0 0 10px #6fea85);
+                opacity: 0.7;
+            }
+
+            100% {
+                filter: drop-shadow(0 0 15px #6fea85) drop-shadow(0 0 20px #6fea85);
+                opacity: 1;
+            }
+        }
+
+        .messy-line {
+            stroke-dasharray: 5, 5;
+            stroke-linecap: round;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="h-60 md:h-96">
+        <svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <!-- Background -->
+            <rect width="100%" height="400" fill="#000000" />
+    
+            <!-- Background Pattern -->
+            <defs>
+                <pattern id="bg-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <!-- Diagonal Lines -->
+                    <line x1="0" y1="0" x2="40" y2="40" stroke="#6fea85" stroke-width="1" opacity="0.2"
+                        class="messy-line" />
+                    <line x1="40" y1="0" x2="0" y2="40" stroke="#6fea85" stroke-width="1" opacity="0.2"
+                        class="messy-line" />
+                    <!-- Dots -->
+                    <circle cx="10" cy="10" r="2" fill="#6fea85" opacity="0.3" />
+                    <circle cx="30" cy="30" r="2" fill="#6fea85" opacity="0.3" />
+                </pattern>
+            </defs>
+            <rect width="100%" height="400" fill="url(#bg-pattern)" opacity="0.5" />
+    
+            <!-- Futuristic Grid Background -->
+            <g opacity="0.2">
+                <!-- Horizontal Lines -->
+                <line x1="0" y1="50" x2="1200" y2="50" stroke="#6fea85" stroke-width="1" class="messy-line" />
+                <line x1="0" y1="150" x2="1200" y2="150" stroke="#6fea85" stroke-width="1" class="messy-line" />
+                <line x1="0" y1="250" x2="1200" y2="250" stroke="#6fea85" stroke-width="1" class="messy-line" />
+                <line x1="0" y1="350" x2="1200" y2="350" stroke="#6fea85" stroke-width="1" class="messy-line" />
+                <!-- Vertical Lines -->
+                <line x1="100" y1="0" x2="100" y2="400" stroke="#6fea85" stroke-width="1" class="messy-line" />
+                <line x1="300" y1="0" x2="300" y2="400" stroke="#6fea85" stroke-width="1" class="messy-line" />
+                <line x1="500" y1="0" x2="500" y2="400" stroke="#6fea85" stroke-width="1" class="messy-line" />
+                <line x1="700" y1="0" x2="700" y2="400" stroke="#6fea85" stroke-width="1" class="messy-line" />
+                <line x1="900" y1="0" x2="900" y2="400" stroke="#6fea85" stroke-width="1" class="messy-line" />
+                <line x1="1100" y1="0" x2="1100" y2="400" stroke="#6fea85" stroke-width="1" class="messy-line" />
+            </g>
+    
+            <!-- Title Text -->
+            <text x="600" y="100" font-family="Arial" font-size="50" fill="#6fea85" text-anchor="middle" class="glow">
+                ORGANIZATION CORE
+            </text>
+    
+            <!-- Organization Details -->
+            <text x="600" y="150" font-family="Arial" font-size="18" fill="#6fea85" text-anchor="middle">
+                Location: Global | Founded: 2020
+            </text>
+    
+            <!-- Icons in Random Positions -->
+            <!-- Calendar Icon -->
+            <g id="calendar" transform="translate(100, 50)">
+                <rect x="0" y="0" width="50" height="50" fill="none" stroke="#6fea85" stroke-width="4" />
+                <rect x="10" y="10" width="30" height="30" fill="none" stroke="#6fea85" stroke-width="2"
+                    transform="rotate(5 25 25)" />
+                <line x1="10" y1="20" x2="40" y2="20" stroke="#6fea85" stroke-width="2" class="messy-line" />
+            </g>
+    
+            <!-- Document Icon -->
+            <g id="document" transform="translate(1100, 300)">
+                <rect x="0" y="0" width="50" height="50" fill="none" stroke="#6fea85" stroke-width="4" />
+                <line x1="15" y1="15" x2="35" y2="15" stroke="#6fea85" stroke-width="2" class="messy-line" />
+                <line x1="15" y1="25" x2="35" y2="25" stroke="#6fea85" stroke-width="2" class="messy-line" />
+                <line x1="15" y1="35" x2="35" y2="35" stroke="#6fea85" stroke-width="2" class="messy-line" />
+            </g>
+    
+            <!-- Team Icon -->
+            <g id="team" transform="translate(200, 350)">
+                <rect x="0" y="0" width="50" height="50" fill="none" stroke="#6fea85" stroke-width="4" />
+                <circle cx="25" cy="20" r="10" fill="none" stroke="#6fea85" stroke-width="2" transform="rotate(-3 25 20)" />
+                <circle cx="15" cy="35" r="7" fill="none" stroke="#6fea85" stroke-width="2" />
+                <circle cx="35" cy="35" r="7" fill="none" stroke="#6fea85" stroke-width="2" />
+            </g>
+    
+            <!-- Settings Icon -->
+            <g id="settings" transform="translate(900, 50)">
+                <rect x="0" y="0" width="50" height="50" fill="none" stroke="#6fea85" stroke-width="4" />
+                <circle cx="25" cy="25" r="15" fill="none" stroke="#6fea85" stroke-width="2" class="messy-line" />
+                <circle cx="25" cy="25" r="5" fill="#6fea85" />
+            </g>
+    
+            <!-- Tagline with Slight Messy Rotation -->
+            <text x="600" y="350" font-family="Arial" font-size="30" fill="#6fea85" text-anchor="middle" class="glow"
+                transform="rotate(2 600 350)">
+                Plan, Connect, Thrive!
+            </text>
+        </svg>
+    </div>
+</body>
+
+</html>
